@@ -1,0 +1,24 @@
+{
+    "social": [
+        {
+            "name": "email",
+            "username": "eltonp3103@gmail.com",
+            "domain": "mailto:"
+        },
+        {
+            "name": "github",
+            "username": "1ntEgr8",
+            "domain": "https://www.github.com/"
+        },
+        {
+            "name": "twitter",
+            "username": "1ntEgr8",
+            "domain": "https://www.twitter.com/"
+        },
+        {
+            "name": "linkedin",
+            "username": "elton-pinto",
+            "domain": "https://www.linkedin.com/in/"
+        }
+    ]
+}

@@ -1,0 +1,7 @@
+<footer>
+    <ul id="contact">
+        {% for account in metadata.social %}
+            <li><a href="{{ account.domain }}{{ account.username }}" target="_blank">{{ account.name }}</a></li>
+        {% endfor %}
+    </ul>
+</footer>
