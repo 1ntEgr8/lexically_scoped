@@ -9,6 +9,7 @@
     --primary-color: #efefef;
     --secondary-color-1: #afafff;
     --secondary-color-2: #ffa766;
+    --success-color: #68ff82;
     --muted: #969696;
 }
 
@@ -34,6 +35,19 @@ body {
 
 main {
     flex: 1 0 auto;
+}
+
+button {
+    border: 3px solid black;
+    border-radius: 5px;
+    font-weight: 700;
+    padding: 5px;
+    background: var(--secondary-color-2);
+    cursor: pointer;
+}
+
+.download-btn {
+    background: var(--success-color);
 }
 
 .accent {

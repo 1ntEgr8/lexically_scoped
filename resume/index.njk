@@ -2,8 +2,18 @@
 layout: layouts/main.njk
 ---
 <style>
+    .resume h2 {
+        color: var(--secondary-color-1);
+    }
+
     .resume section {
         padding-bottom: 0px;
+    }
+
+    .resume__header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
     }
 
     .resume__container {
@@ -30,11 +40,13 @@ layout: layouts/main.njk
 </style>
 
 <div class="content">
-    <div>
-        <button>Download pdf</button>
-    </div>
     <div class="resume">
-        <h1>{{ me.name }}</h1>
+        <div class="resume__header">
+            <h1>{{ me.name }}</h1>
+            <div>
+                <a href="https://drive.google.com/file/d/1cte4ENgb7_0ju5kWoH4qDYiKk8nW9BRB/view?usp=sharing" target="_blank"><button>view as pdf</button></a>
+            </div>
+        </div>
 
         <section>
             <h2>Education</h2>
