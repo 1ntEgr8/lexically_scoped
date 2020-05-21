@@ -12,7 +12,18 @@
     --muted: #969696;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
+html, body {
+    height: 100%;
+    box-sizing: border-box;
+}
+
 body {
+    display: flex;
+    flex-direction: column;
     padding: 0px;
     margin: 0px;
     font-family: var(--font);
@@ -21,7 +32,9 @@ body {
     background: var(--bg-color);
 }
 
-
+main {
+    flex: 1 0 auto;
+}
 
 .accent {
     color: var(--secondary-color-2);
@@ -58,6 +71,12 @@ body {
 .content a:hover {
     opacity: 1;
     border-bottom: 2.5px solid var(--secondary-color-1);
+}
+
+.content a:visited { }
+
+.content section {
+    padding-bottom: 20px;
 }
 
 @media (prefers-color-scheme: dark) {

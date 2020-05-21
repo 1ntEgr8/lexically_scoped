@@ -6,7 +6,7 @@
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
         <style>
-            :root{--font:Roboto,'sans-serif';--title-font:Inter,'sans-serif';--bg-color:#1e1e1e;--primary-color:#efefef;--secondary-color-1:#afafff;--secondary-color-2:#ffa766;--muted:#969696}body{padding:0;margin:0;font-family:var(--font);font-size:1.1rem;color:var(--primary-color);background:var(--bg-color)}.accent{color:var(--secondary-color-2);font-weight:700}.splash{display:flex;justify-content:center;align-items:center}.splash__title{color:var(--primary-color);font-family:var(--title-font);font-size:3.5rem;font-weight:700}.content{line-height:150%;margin:0 20% 0 20%}.content a{color:var(--secondary-color-1);font-weight:700;text-decoration:none;border-bottom:2px solid var(--secondary-color-1);opacity:.8;transition:opacity .2s ease-in}.content a:hover{opacity:1;border-bottom:2.5px solid var(--secondary-color-1)}@media (prefers-color-scheme:dark){:root{--bg-color:#1e1e1e;--primary-color:#efefef}}.nav{font-family:var(--font)}.nav__list{display:flex;justify-content:center;align-items:center;list-style-type:none;padding:0;margin:0}.nav__list__item{padding:20px}.nav__list__item a{color:var(--muted);font-size:1.1rem;font-weight:700;text-decoration:none;transition:color .2s ease-in}.nav__list__item a:hover{color:var(--secondary-color-1)}.footer__social{padding:0;margin:0;display:flex;justify-content:center;align-items:center;list-style-type:none}.footer__social__item{font-weight:700;padding:10px}.footer__social__item--separator{color:var(--secondary-color-1);font-size:1.5rem}.footer__social__item a{color:var(--muted);transition:color .2s ease-in}.footer__social__item a:hover{color:var(--secondary-color-2)}
+            :root{--font:Roboto,'sans-serif';--title-font:Inter,'sans-serif';--bg-color:#1e1e1e;--primary-color:#efefef;--secondary-color-1:#afafff;--secondary-color-2:#ffa766;--muted:#969696}html{scroll-behavior:smooth}body,html{height:100%;box-sizing:border-box}body{display:flex;flex-direction:column;padding:0;margin:0;font-family:var(--font);font-size:1.1rem;color:var(--primary-color);background:var(--bg-color)}main{flex:1 0 auto}.accent{color:var(--secondary-color-2);font-weight:700}.splash{display:flex;justify-content:center;align-items:center}.splash__title{color:var(--primary-color);font-family:var(--title-font);font-size:3.5rem;font-weight:700}.content{line-height:150%;margin:0 20% 0 20%}.content a{color:var(--secondary-color-1);font-weight:700;text-decoration:none;border-bottom:2px solid var(--secondary-color-1);opacity:.8;transition:opacity .2s ease-in}.content a:hover{opacity:1;border-bottom:2.5px solid var(--secondary-color-1)}.content section{padding-bottom:20px}@media (prefers-color-scheme:dark){:root{--bg-color:#1e1e1e;--primary-color:#efefef}}.nav{font-family:var(--font)}.nav__list{display:flex;justify-content:center;align-items:center;list-style-type:none;padding:0;margin:0}.nav__list__item{padding:20px}.nav__list__item a{color:var(--muted);font-size:1.1rem;font-weight:700;text-decoration:none;transition:color .2s ease-in}.nav__list__item a:hover{color:var(--secondary-color-1)}.footer{flex-shrink:0;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:20px}.footer__social{padding:0;margin:0;display:flex;justify-content:center;align-items:center;list-style-type:none}.footer__social__item{font-weight:700;padding:10px}.footer__social__item--separator{color:var(--secondary-color-1);font-size:1.5rem}.footer__identity a,.footer__social__item a{color:var(--muted);transition:color .2s ease-in}.footer__identity a:hover,.footer__social__item a:hover{color:var(--secondary-color-2)}.footer__identity{color:var(--muted);font-size:.75rem}.footer__social--highlight{border:3px dotted #fff;animation:footer__social--highlight-anim 5s ease-in}@keyframes footer__social--highlight-anim{0%{opacity:0}25%{opacity:1}75%{opacity:1}100%{opacity:0}}
         </style>
     </head>
     <body>
@@ -27,25 +27,31 @@
     <h1 class="splash__title"><span aria-hidden="true" class="emoji">👋</span> Hi, I'm Elton</h1>
 </div>
 <div class="content">
-    <p>
-    I'm an undergrad studying Computer Science at <a href="">Georgia Tech</a>. My interests include operating systems, compilers, functional programming, web development, and all things Rust!
-    </p>
+    <section>
+        <p>
+            I'm an undergrad studying Computer Science at <a href="https://gatech.edu/" target="_blank">Georgia Tech</a>. My interests include operating systems, compilers, functional programming, web development, and all things Rust!
+        </p>
 
-    <p>
-    I enjoy hacking on <span class="accent">open source projects <span aria-hidden="true" class="emoji">⚙️</span></span>, <span class="accent">speed cubing <span aria-hidden="true" class="emoji">⌛</span></span>, <span class="accent">origami <span aria-hidden="true" class="emoji">💮</span></span>, and <span class="accent">reading books <span aria-hidden="true" class="emoji">📚</span></span>. 
-    </p>
+        <p>
+            I enjoy hacking on <span class="accent">open source projects <span aria-hidden="true" class="emoji">⚙️</span></span>, <span class="accent">speed cubing <span aria-hidden="true" class="emoji">⌛</span></span>, <span class="accent">origami <span aria-hidden="true" class="emoji">💮</span></span>, and <span class="accent">reading books <span aria-hidden="true" class="emoji">📚</span></span>. 
+        </p>
 
-    <p>
-    I currently work with <a href="">HackGT</a> as a tech team member, where I help throw one of the biggest hackathons in the south. I'm also a teaching assistant for CS 2110 (Computer Systems and Architecture).
-    </p>
+        <p>
+            I currently work with <a href="https://www.hack.gt/" target="_blank">HackGT</a> as a tech team member where I help throw one of the biggest collegiate hackathons in the south. I'm also a teaching assistant for CS 2110 (Computer Systems and Architecture).
+        </p>
 
-    <p>
-    In the past, I've interned at <a href="">NCR</a>. I was an event lead for <a href="">Horizons</a>, which is an arts + tech hackathon that catered to over 300 hackers, and led to some really interesting projects.
-    </p>
+        <p>
+            In the past, I've interned at <a href="https://www.ncr.com" target="_blank">NCR</a>. I was an event lead for <a href="https://www.horizons.hack.gt/" target="_blank">Horizons</a>, an arts + tech hackathon that attracted over 300 hackers who made some really cool projects.
+        </p>
 
-    <p>
-    You can find my projects on <a href="">github</a>
-    </p>
+        <p>
+            You can find my projects on <a href="https://www.github.com/" target="_blank">github</a>. Some of my musings can be found on my <a href="/blog">blog</a>.
+        </p>
+    </section>
+
+    <section>
+        <h2><span aria-hidden="true" class="emoji">📜</span> Recent posts </h2>
+    </section>
 </div>
 
 </main>
@@ -72,6 +78,9 @@
             
         
     </ul>
+    <div class="footer__identity">
+        verify my identity on <a href="https://keybase.io/1ntEgr8" target="_blank">keybase</a>
+    </div>
 </footer>
 
 
