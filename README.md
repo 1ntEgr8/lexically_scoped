@@ -1,0 +1,2 @@
+# rustic
+my blog
