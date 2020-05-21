@@ -1,13 +1,13 @@
 <footer class="footer">
     <ul class="footer__social" id="contact">
-        {% for account in metadata.social %}
-            <li class="footer__social__item"><a href="{{ account.domain }}{{ account.username }}" target="_blank">{{ account.name }}</a></li>
+        {% for social, details in me.socials %}
+            <li class="footer__social__item"><a href="{{ details.url}}" target="_blank">{{ social }}</a></li>
             {% if loop.index != loop.length %}
             <div class="footer__social__item--separator">•</div>
             {% endif %}
         {% endfor %}
     </ul>
     <div class="footer__identity">
-        verify my identity on <a href="{{ metadata.identity.domain }}{{ metadata.identity.username }}" target="_blank">{{ metadata.identity.name }}</a>
+        verify my identity on <a href="{{ me.identity.url }}" target="_blank">{{ me.identity.service }}</a>
     </div>
 </footer>

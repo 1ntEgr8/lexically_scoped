@@ -1,0 +1,30 @@
+{
+    "name": "Elton Leander Pinto",
+    "website": {
+        "url": "http://www.eltonpinto.me",
+        "domain": "eltonpinto.me"
+    },
+    "socials": {
+        "email": {
+            "username": "eltonp3103@gmail.com",
+            "url": "mailto:eltonp3103@gmail.com"
+        },
+        "github": {
+            "username": "1ntEgr8",
+            "url": "https://www.github.com/1ntEgr8"
+        },
+        "twitter": {
+            "username": "1ntEgr8",
+            "url": "https://www.twitter.com/1ntEgr8"
+        },
+        "linkedin": {
+            "username": "elton-pinto",
+            "url": "https://www.linkedin.com/in/elton-pinto"
+        }
+    },
+    "identity": {
+        "service": "keybase",
+        "url": "https://www.keybase.io/1ntEgr8"
+    }
+}
+
