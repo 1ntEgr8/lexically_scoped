@@ -1,7 +1,38 @@
 ---
-layout: layouts/base.njk
+layout: layouts/main.njk
+links:
+    gatech:
+      main: https://gatech.edu/
+      hackgt:
+        main: https://www.hack.gt/
+        horizons: https://www.horizons.hack.gt/
+        horizonsProjects: https://horizons.hack.gt/
+    work:
+      ncr: https://www.ncr.com
+      github: https://www.github.com/
 ---
 
-<div>
-    <h1>{% emoji "👋" %} Hi, I'm Elton</h1>
+<div class="splash">
+    <h1 class="splash__title">{% emoji "👋" %} Hi, I'm Elton</h1>
+</div>
+<div class="content">
+    <p>
+    I'm an undergrad studying Computer Science at <a href="{{ gatech.main }}">Georgia Tech</a>. My interests include operating systems, compilers, functional programming, web development, and all things Rust!
+    </p>
+
+    <p>
+    I enjoy hacking on <span class="accent">open source projects {% emoji "⚙️" %}</span>, <span class="accent">speed cubing {% emoji "⌛" %}</span>, <span class="accent">origami {% emoji "💮" %}</span>, and <span class="accent">reading books {% emoji "📚" %}</span>. 
+    </p>
+
+    <p>
+    I currently work with <a href="{{ gatech.hackgt.main }}">HackGT</a> as a tech team member, where I help throw one of the biggest hackathons in the south. I'm also a teaching assistant for CS 2110 (Computer Systems and Architecture).
+    </p>
+
+    <p>
+    In the past, I've interned at <a href="{{ work.ncr }}">NCR</a>. I was an event lead for <a href="{{ gatech.hackgt.horizons }}">Horizons</a>, which is an arts + tech hackathon that catered to over 300 hackers, and led to some really interesting projects.
+    </p>
+
+    <p>
+    You can find my projects on <a href="{{ work.github }}">github</a>
+    </p>
 </div>

@@ -1,13 +1,19 @@
----
-title: The Rustic Blog
----
-
-<body>
-    {% include 'header.njk' %}
-
-    <main>
+<!doctype html>
+<html lang="en">
+    <head>
+        <title>in construction</title>
+        {% set css %}
+            {% include 'styles/index.css' %}
+            {% include 'styles/nav.css' %}
+            {% include 'styles/footer.css' %}
+        {% endset %}
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+        <style>
+            {{ css | cssmin | safe }}
+        </style>
+    </head>
+    <body>
         {{ content | safe }}
-    </main>
-
-    {% include 'footer.njk' %}
-</body>
+    </body>
+</html>

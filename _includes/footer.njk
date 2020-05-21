@@ -1,7 +1,10 @@
-<footer>
-    <ul id="contact">
+<footer class="footer">
+    <ul class="footer__social" id="contact">
         {% for account in metadata.social %}
-            <li><a href="{{ account.domain }}{{ account.username }}" target="_blank">{{ account.name }}</a></li>
+            <li class="footer__social__item"><a href="{{ account.domain }}{{ account.username }}" target="_blank">{{ account.name }}</a></li>
+            {% if loop.index != loop.length %}
+            <div class="footer__social__item--separator">•</div>
+            {% endif %}
         {% endfor %}
     </ul>
 </footer>

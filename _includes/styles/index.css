@@ -1,0 +1,68 @@
+/* TODO modify light mode colors */
+:root {
+    /* fonts */
+    --font: Roboto, 'sans-serif';
+    --title-font: Inter, 'sans-serif';
+    
+    /* colors */
+    --bg-color: #1e1e1e;
+    --primary-color: #efefef;
+    --secondary-color-1: #afafff;
+    --secondary-color-2: #ffa766;
+    --muted: #969696;
+}
+
+body {
+    padding: 0px;
+    margin: 0px;
+    font-family: var(--font);
+    font-size: 1.1rem;
+    color: var(--primary-color);
+    background: var(--bg-color);
+}
+
+
+
+.accent {
+    color: var(--secondary-color-2);
+    font-weight: 700;
+}
+
+.splash {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.splash__title {
+    color: var(--primary-color);
+    font-family: var(--title-font);
+    font-size: 3.5rem;
+    font-weight: 700;
+}
+
+.content {
+    line-height: 150%;
+    margin: 0px 20% 0 20%;
+}
+
+.content a {
+    color: var(--secondary-color-1);
+    font-weight: 700;
+    text-decoration: none;
+    border-bottom: 2px solid var(--secondary-color-1);
+    opacity: 0.8;
+    transition: opacity 0.2s ease-in;
+}
+
+.content a:hover {
+    opacity: 1;
+    border-bottom: 2.5px solid var(--secondary-color-1);
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bg-color: #1e1e1e;
+        --primary-color: #efefef;
+    }
+}
