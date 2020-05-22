@@ -1,9 +1,18 @@
 const CleanCSS = require("clean-css");
+const Terser = require("terser");
 
 module.exports = eleventyConfig => {
     // filters
     eleventyConfig.addFilter("cssmin", (code) => {
         return new CleanCSS({}).minify(code).styles;
+    });
+
+    eleventyConfig.addFilter("jsmin", (code) => {
+        let minified = Terser.minify(code);
+        if (minified.error) {
+            console.log("Terser error: ", minified.error);
+            return code;
+        }
     });
     
     // shortcodes
