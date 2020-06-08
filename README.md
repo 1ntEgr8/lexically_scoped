@@ -1,2 +1,3 @@
-# rustic
-my blog
+# lexically :: scoped
+
+personal website v2
