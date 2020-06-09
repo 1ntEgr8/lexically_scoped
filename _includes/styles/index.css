@@ -82,6 +82,10 @@ button {
     margin: 0px 20% 0 20%;
 }
 
+.content h1 {
+    font-size: 2.5rem;
+}
+
 .content a {
     color: var(--secondary-color-1);
     font-weight: 700;
@@ -100,6 +104,19 @@ button {
 
 .content section {
     padding-bottom: 20px;
+}
+
+.post {
+    padding: 20px 0px;
+}
+
+.post__date {
+    opacity: 0.7;
+}
+
+.post__title {
+    font-size: 2rem;
+    padding-bottom: 10px;
 }
 
 @media (prefers-color-scheme: dark) {
