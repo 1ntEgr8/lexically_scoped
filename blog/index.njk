@@ -5,12 +5,12 @@ layout: layouts/main.njk
 <div class="content">
     <h2><span style="padding-right: 10px;">🎯</span> lexically :: scoped</h2>
     <div>
-        {%- for post in collections.post -%}
+        {%- for post in collections.post | reverse -%}
         <div class="post">
             <a href={{ post.url }}>
                 <article class="post__title">{{ post.data.title }}</article>
             </a>
-            <time class="post__date" datetime="{{ post.date | htmlDateString }}">{{ post.date | readableDate }}</time>
+            <time class="post__date" datetime="{{ post.data.date | htmlDateString }}">{{ post.data.date | readableDate }}</time>
             <p>{{ post.data.excerpt }} <a href="{{ post.url }}"> read more </a></p>
         </div>
         <hr></hr>
