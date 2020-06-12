@@ -5,3 +5,6 @@ node-supporters/
 .env
 .log
 .cache
+
+# Local Netlify folder
+.netlify
