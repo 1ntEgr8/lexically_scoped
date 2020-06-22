@@ -1,5 +1,6 @@
 ---
-title: Implementing <code>flat_map</code> in Rust
+title: Implementing flat_map in Rust
+description: An implementation of flat_map in Rust 
 date: 2020-06-22
 excerpt: Not too long ago I happened to watch <a href="https://www.youtube.com/channel/UC_iD0xppBwwsrM9DegC5cQQ" target="_blank">@jonhoo</a>'s Crust of Rust <a href="https://www.youtube.com/watch?v=yozQ9C69pNs" target="_blank">stream on iterators</a>. He implemented the standard library function <code><a href="https://doc.rust-lang.org/std/iter/trait.Iterator.html#method.flatten" target="_blank">flatten</a></code> and along the way explained bits and pieces of Rust's trait system. In the stream, he recommends implementing <code><a href="https://doc.rust-lang.org/std/iter/trait.Iterator.html#method.flat_map" target="_blank">flat_map</a></code> as a way to better understand traits. So, here we are!
 ---
