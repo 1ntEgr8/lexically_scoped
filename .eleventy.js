@@ -54,4 +54,5 @@ module.exports = eleventyConfig => {
     });
     // passthrough copy
     eleventyConfig.addPassthroughCopy("assets");
+    eleventyConfig.addPassthroughCopy("keybase.txt");
 };
