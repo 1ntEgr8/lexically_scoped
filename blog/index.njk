@@ -8,10 +8,11 @@ layout: layouts/main.njk
         {%- for post in collections.post | reverse -%}
         <div class="post">
             <a href={{ post.url }}>
-                <article class="post__title">{{ post.data.title }}</article>
+                <article class="post__title">{{ post.data.title | safe }}</article>
             </a>
             <time class="post__date" datetime="{{ post.data.date | htmlDateString }}">{{ post.data.date | readableDate }}</time>
-            <p>{{ post.data.excerpt }} <a href="{{ post.url }}"> read more </a></p>
+            <p>{{ post.data.excerpt | safe }}</p>
+            <a href="{{ post.url }}"> read more </a>
         </div>
         <hr></hr>
         {%- endfor -%}
