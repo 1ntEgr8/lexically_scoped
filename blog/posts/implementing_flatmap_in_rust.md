@@ -10,7 +10,7 @@ excerpt: Not too long ago I happened to watch <a href="https://www.youtube.com/c
 
 Not too long ago I happened to watch [@jonhoo](https://www.youtube.com/channel/UC_iD0xppBwwsrM9DegC5cQQ)'s Crust of Rust [stream on iterators](https://www.youtube.com/watch?v=yozQ9C69pNs). He implemented the standard library function {% anchored-code "flatten" "https://doc.rust-lang.org/std/iter/trait.Iterator.html#method.flatten" %} and along the way explained bits and pieces of Rust's trait system. In the stream, he recommends implementing {% anchored-code "flat_map" "https://doc.rust-lang.org/std/iter/trait.Iterator.html#method.flat_map" %} as a way to better understand traits. So, here we are!
 
-First let's try to understand what `flat_map` is and why it's useful. Then I'll show you how I implemented it, explaining my thought process along the way. Finally, I'll leave you a bonus exercise to solidify your understanding. I'm assuming that you've coded in Rust before and are familiar with iterators and traits.
+First let's try to understand what `flat_map` is and why it's useful. Then I'll show you how I implemented it, explaining my thought process along the way. I'm assuming that you've coded in Rust before and are familiar with iterators and traits.
 
 ## What in the world is `flat_map`?
 
@@ -18,9 +18,9 @@ Most of us are familiar with the concept of mapping. For every element in a coll
 
 To put it more formally, given a collection $[a]$ and a function $f: a \rightarrow b$, $map([a]) = [b]$, where $a$ and $b$ are types.
 
-Alright, now what's the deal with `flat`? It is better understood through an example. 
+Alright, now what's the deal with `flat`? Let's try to understand it through an example.
 
-Let's say I have a list of elements $A = [[1,2], [3, 4, 5]]$. Flattening A will give me the list $[1, 2, 3, 4, 5]$. To put it simply, `flat` removes nesting from collections. The level of nesting removed depends on the implementation of the function. In Javascript's {% anchored-code "Array.prototype.flat" "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/flat" %}, you can specify how deep a nested structure should be flattened by passing in a `depth` parameter. In Rust, the standard library function {% anchored-code "flatten" "https://doc.rust-lang.org/std/iter/trait.Iterator.html#method.flatten" %} will remove only one level of nesting.
+Let's say I have a list of elements $A = [[1,2], [3, 4, 5]]$. Flattening $A$ will give me the list $[1, 2, 3, 4, 5]$. To put it simply, `flat` removes nesting from collections. The level of nesting removed depends on the implementation of the function. In Javascript's {% anchored-code "Array.prototype.flat" "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/flat" %}, you can specify how deep a nested structure should be flattened by passing in a `depth` parameter. In Rust, the standard library function {% anchored-code "flatten" "https://doc.rust-lang.org/std/iter/trait.Iterator.html#method.flatten" %} will remove only one level of nesting.
 
 Now that we've understood what `flat` and `map` mean separately, understanding `flat_map` is a piece of cake.
 
