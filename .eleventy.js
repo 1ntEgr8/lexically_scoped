@@ -6,7 +6,7 @@ const markdownIt = require("markdown-it");
 
 module.exports = eleventyConfig => {
     eleventyConfig.addPlugin(syntaxHighlightPlugin);
-    
+
     let markdownItOptions = {
         html: true,
         breaks: true,
@@ -39,6 +39,10 @@ module.exports = eleventyConfig => {
         return DateTime.fromJSDate(dateObj, { zone: "utc" }).toFormat(
             "yyyy-LL-dd"
         );
+    });
+
+    eleventyConfig.addFilter("toDateObj", dateString => {
+        return new Date(dateString);
     });
 
     // shortcodes
