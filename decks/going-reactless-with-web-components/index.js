@@ -62,4 +62,4 @@ class IncDec extends HTMLElement {
 }
 
 
-customElements.define("my-incdec", IncDec);
+customElements.define("an-incdec", IncDec);

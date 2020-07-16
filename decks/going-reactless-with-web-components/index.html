@@ -48,7 +48,7 @@
             nomodule
             src="https://unpkg.com/@google/model-viewer/dist/model-viewer-legacy.js"
         ></script>
-        
+
         <!-- ERD editor -->
         <script src="https://cdn.jsdelivr.net/npm/vuerd/dist/vuerd.min.js"></script>
     </head>
@@ -135,10 +135,13 @@
                                 components
                             </li>
                             <li>
-                                Supported natively by every browser
+                                Supported natively in every browser
                                 <ul>
                                     <li>
-                                        no framework required<span class="accent">*</span>
+                                        no framework required<span
+                                            class="accent"
+                                            >*</span
+                                        >
                                     </li>
                                 </ul>
                             </li>
@@ -184,7 +187,11 @@
                     <section style="width: 100%;" id="erd">
                         ERD Editor
                         <erd-editor width="1000" height="500"></erd-editor>
-                        <small>Note: keyboard shortcut to advance to next slide is disabled. Click the arrow buttons on the bottom right to navigate.</small>
+                        <small
+                            >Note: keyboard shortcut to advance to next slide is
+                            disabled. Click the arrow buttons on the bottom
+                            right to navigate.</small
+                        >
                     </section>
                 </section>
 
@@ -193,62 +200,264 @@
                     <section>
                         What are we building?
                         <p class="mono">
-                            &lt;my-incdec&gt;
+                            &lt;an-incdec&gt;
                         </p>
                         <div class="horizontal">
-                            <my-incdec></my-incdec>
+                            <an-incdec></an-incdec>
                         </div>
                     </section>
                     <section>
-                        We're going to be using three W3C Specifications
+                        We're going to be using three W3C Specifications:
                         <ul>
-                            <li>Custom Elements</li>
-                            <li>Shadow DOM</li>
-                            <li>Template HTML</li>
+                            <details>
+                                <summary>Custom Elements</summary>
+                                <small
+                                    >This feature lets you tell the browser to
+                                    identify
+                                    <span class="mono">&lt;your-tag&gt;</span>
+                                    as a valid HTML tag</small
+                                >
+                            </details>
+                            <details>
+                                <summary>Shadow DOM</summary>
+                                <small>
+                                    This allows you to encapsulate your styles
+                                    so that it doesn't affect other DOM nodes.
+                                </small>
+                            </details>
+                            <details>
+                                <summary>HTML Templates</summary>
+                                <small>
+                                    This can help you avoid interpolating HTML
+                                    in javascript
+                                </small>
+                            </details>
                         </ul>
                     </section>
                     <section>
-                        class structure
+                        Set up the class in <span class="mono">index.js</span>
+                        <pre>
+                            <code style="min-height: fit-content" data-trim data-line-numbers>
+                            class IncDec extends HTMLElement {
+                                constructor() {
+                                    super();
+
+                                    const dummyEl = document.createElement('div');
+                                    dummyEl.innerHTML = 'hello';
+                                    this.appendChild(dummyEl);
+                                }
+                                
+                                connectedCallback() {
+
+                                }
+
+                                disconnectedCallback() {
+
+                                }
+                            }
+
+                            customElements.define('an-incdec', IncDec);
+                            </code>
+                        </pre>
+                        <small
+                            >You can now use
+                            <span class="mono">&lt;an-incdec&gt;</span> in your
+                            HTML and it will render 'hello'</small
+                        >
                     </section>
                     <section>
-                        shadow DOM
+                        Let's specify an HTML template in
+                        <span class="mono">index.html</span>
+                        <pre>
+                            <code style="min-height: fit-content" data-trim data-line-numbers>
+                                <template id="incdec-template">
+                                    <style>
+                                        :host {
+                                            display: flex;
+                                            margin: 50px;
+                                        }
+
+                                        button {
+                                            width: 100px;
+                                            font-size: 4rem;
+                                            background: #6fbfed; 
+                                            border-radius: 20px;
+                                        }
+
+                                        span {
+                                            width: 100px;
+                                            padding: 20px;
+                                        }
+                                    </style>
+                                    
+                                    <button id="dec"> - </button>
+                                    <span id="count"> 0 </span>
+                                    <button id="inc"> + </button>
+
+                                </template>
+                            </code>
+                        </pre>
                     </section>
                     <section>
-                        template HTML
+                        Use the template in <span class="mono">index.js</span>
+                        <pre>
+                            <code style="min-height: fit-content" data-trim data-line-numbers>
+                            class IncDec extends HTMLElement {
+                                constructor() {
+                                    super();
+
+                                    const template = document.getElementById("incdec-template");
+                                    const el = template.content.cloneNode(true); 
+                                    this.appendChild(el);
+                                }
+                                
+                                connectedCallback() {
+
+                                }
+
+                                disconnectedCallback() {
+
+                                }
+                            }
+
+                            customElements.define('an-incdec', IncDec);
+                            </code>
+                        </pre>
                     </section>
                     <section>
-                        codepen demo
+                        Unleash the Shadow DOM (and add business logic)
+                        <pre>
+                            <code style="min-height: fit-content" data-trim data-line-numbers>
+                            class IncDec extends HTMLElement {
+                                constructor() {
+                                    super();
+                                    
+                                    this.attachShadow({mode: 'open'});
+
+                                    const template = document.getElementById("#incdec-template");
+                                    const el = template.content.cloneNode(true);
+                                    this.shadowRoot.append(el);
+                                
+                                    this._count = 0;
+                                }
+                                
+                                get count() {
+                                    return this._count;
+                                }
+                                
+                                set count(val) {
+                                    if (val < 0) {
+                                        alert("cannot go less than zero");
+                                        return;
+                                    }
+                                
+                                    this._count = val;
+                                    this.shadowRoot.querySelector("#count").innerHTML = this.count;
+                                }
+                                
+                                connectedCallback() {
+                                    this.count = 0;
+                                
+                                    this.shadowRoot.querySelector("#dec").addEventListener("click", () => {
+                                        this.count -= 1;            
+                                    });
+                                
+                                    this.shadowRoot.querySelector("#inc").addEventListener("click", () => {
+                                        this.count += 1;            
+                                    });
+                                }
+                            }
+
+                            customElements.define('an-incdec', IncDec);
+                            </code>
+                        </pre>
+                    </section>
+                    <section>
+                        Feel free to fiddle with this on CodePen!
+                        <p
+                            class="codepen"
+                            data-height="500"
+                            data-theme-id="dark"
+                            data-default-tab="js,result"
+                            data-user="1ntegr8"
+                            data-slug-hash="NWxONbb"
+                            style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;"
+                            data-pen-title="NWxONbb"
+                        >
+                            <span
+                                >See the Pen
+                                <a
+                                    href="https://codepen.io/1ntegr8/pen/NWxONbb"
+                                >
+                                    NWxONbb</a
+                                >
+                                by Elton Leander Pinto (<a
+                                    href="https://codepen.io/1ntegr8"
+                                    >@1ntegr8</a
+                                >) on
+                                <a href="https://codepen.io">CodePen</a>.</span
+                            >
+                        </p>
+                        <script
+                            async
+                            src="https://static.codepen.io/assets/embed/ei.js"
+                        ></script>
                     </section>
                 </section>
 
                 <section>
-                    Before you drink the Kool aid, here are some concerns
-                    <ul>
-                        <li>concern 1</li>
-                        <li>concern 2</li>
-                    </ul>
-                </section>
-
-                <section>
                     <section>
-                        solutions
+                        <h3>Don't drink too much Kool-Aid!</h3>
                         <ul>
-                            <li>solution 1</li>
-                            <li>solution 2</li>
+                            <li>
+                                The vanilla way to write Web Components is very
+                                verbose
+                            </li>
+                            <li>
+                                What about state, props, composition? The API is
+                                very imperative in nature!
+                            </li>
                         </ul>
                     </section>
                     <section>
-                        hybrids code
+                        <h3>Solutions</h3>
+                        <ul>
+                            <li>hybrids</li>
+                            <li>lit-element</li>
+                            <li>stenciljs</li>
+                        </ul>
                     </section>
                 </section>
 
                 <section>
-                    Do I ditch my favorite front-end framework? No! you don't
-                    have to do that
+                    Do I ditch existing front-end frameworks?
+                    <pre>
+                        <code style="min-height: fit-content" data-trim data-line-numbers>
+                            import React from "react";
+                            
+                            class App extends React.Component {
+                                ...
+
+                                render() {
+                                    return (
+                                        <div>
+                                            A cool web component!
+                                            <an-indec></an-indec>
+                                        </div>
+                                    );
+                                }
+                            }
+                        </code>
+                    </pre>
+                    <small
+                        >No! Web Components are compatible with every framework.
+                        In the above example, we are using our component in
+                        React.</small
+                    >
                 </section>
 
                 <section>
-                    <section>Let's talk about some use cases!</section>
+                    <section><h3>Let's talk use cases!</h3></section>
                     <section>component libraries</section>
                     <section>web assembly and shipping performant code</section>
                     <section>web assembly showcase</section>
@@ -272,10 +481,10 @@
                 hash: true,
 
                 // Learn about plugins: https://revealjs.com/plugins/
-                plugins: [RevealMarkdown, RevealHighlight, RevealNotes],
+                plugins: [RevealMarkdown, RevealHighlight, RevealNotes]
             });
 
-            Reveal.on( 'slidechanged', event => {
+            Reveal.on("slidechanged", event => {
                 if (event.currentSlide.id == "erd") {
                     Reveal.configure({ keyboard: false });
                 } else {
