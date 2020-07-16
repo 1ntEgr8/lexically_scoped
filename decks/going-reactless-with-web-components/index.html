@@ -250,10 +250,6 @@
                                 connectedCallback() {
 
                                 }
-
-                                disconnectedCallback() {
-
-                                }
                             }
 
                             customElements.define('an-incdec', IncDec);
@@ -297,6 +293,12 @@
                                 </template>
                             </code>
                         </pre>
+                        <small
+                            >Don't worry about what
+                            <span class="mono">:host</span> means just yet. It
+                            will make more sense when we talk about the Shadow
+                            DOM</small
+                        >
                     </section>
                     <section>
                         Use the template in <span class="mono">index.js</span>
@@ -314,15 +316,16 @@
                                 connectedCallback() {
 
                                 }
-
-                                disconnectedCallback() {
-
-                                }
                             }
 
                             customElements.define('an-incdec', IncDec);
                             </code>
                         </pre>
+                        <small
+                            >The code will render the UI fine, but the styles
+                            will leak out because we are not using the Shadow
+                            DOM. Let's fix that!</small
+                        >
                     </section>
                     <section>
                         Unleash the Shadow DOM (and add business logic)
@@ -371,6 +374,13 @@
                             customElements.define('an-incdec', IncDec);
                             </code>
                         </pre>
+                        <small
+                            >Whatever styles you set in the
+                            <span class="mono">&lt;style&gt;</span> is scoped to
+                            just your component. It
+                            <span class="accent bold">WILL NOT</span> leak
+                            out</small
+                        >
                     </section>
                     <section>
                         Feel free to fiddle with this on CodePen!
@@ -410,22 +420,79 @@
                         <h3>Don't drink too much Kool-Aid!</h3>
                         <ul>
                             <li>
-                                The vanilla way to write Web Components is very
-                                verbose
+                                The vanilla way to write Web Components is
+                                <span class="accent"> verbose</span>
                             </li>
                             <li>
                                 What about state, props, composition? The API is
-                                very imperative in nature!
+                                <span class="accent">imperative</span> in
+                                nature!
                             </li>
                         </ul>
                     </section>
                     <section>
                         <h3>Solutions</h3>
                         <ul>
-                            <li>hybrids</li>
-                            <li>lit-element</li>
-                            <li>stenciljs</li>
+                            <li>
+                                <a href="https://hybrids.js.org/">hybrids</a>
+                                <ul>
+                                    <li>
+                                        Let's you write Web Components with a
+                                        mixture of OOP and FP
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a
+                                    href="https://lit-element.polymer-project.org/"
+                                    >lit-element</a
+                                >
+                                <ul>
+                                    <li>
+                                        Google's library for making Web
+                                        Components
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="https://stenciljs.com/">stenciljs</a>
+                                <ul>
+                                    <li>
+                                        A toolchain for building design systems
+                                        that comes with a virtual DOM and feels
+                                        like React
+                                    </li>
+                                </ul>
+                            </li>
                         </ul>
+                    </section>
+                    <section>
+                        Implementation of
+                        <span class="mono">&lt;an-incdec&gt;</span> in hybrids
+                        <pre>
+                            <code style="min-height: fit-content" data-trim data-line-numbers>
+                                import { html, define } from 'hybrids';
+
+                                export function inc(host) {
+                                    host.count += 1;
+                                }
+
+                                export function dec(host) {
+                                    host.count -= 1;
+                                }
+
+                                export const IncDec = {
+                                    count: 0, 
+                                    render: ({ count }) => html`
+                                        <button onclick="${dec}"> - </button>
+                                        <span>${count}</span>
+                                        <button onclick="${inc}"> + </button>
+                                    `,
+                                }
+
+                                define('an-incdec', IncDec);
+                            </code>
+                        </pre>
                     </section>
                 </section>
 
@@ -459,11 +526,12 @@
                 <section>
                     <section><h3>Let's talk use cases!</h3></section>
                     <section>
-                        component libraries
+                        <h3>component libraries</h3>
                         <ul>
                             <li>
-                                It's the perfect fit for establishing consistent
-                                UIs across all web apps
+                                It's the perfect fit for establishing
+                                <span class="accent">consistent UIs</span>
+                                across all web apps
                             </li>
                             <li>
                                 Companies like Apple, Google, Salesforce,
@@ -480,9 +548,9 @@
                                 </ul>
                             </li>
                             <li>
-                                <a href="https://open-wc.org/"></a> and
-                                <a href="https://stenciljs.com/"></a> are good
-                                resources to get you started
+                                <a href="https://open-wc.org/">open-wc</a> and
+                                <a href="https://stenciljs.com/">stenciljs</a>
+                                are good resources to get you started
                             </li>
                             <li>
                                 Feel free to check out
@@ -495,13 +563,17 @@
                         </ul>
                     </section>
                     <section>
-                        the UNIX philosophy
+                        <h3>the UNIX philosophy</h3>
                         <ul>
-                            <li>Do one thing, but do it really well!</li>
+                            <li>
+                                Do one thing, but do it
+                                <span class="accent">really well!</span>
+                            </li>
                             <li>
                                 You can write some very performant code (using
-                                Web Assembly), pack it into a web component, and
-                                ship it!
+                                <a href="https://webassembly.org/"
+                                    >Web Assembly</a
+                                >), pack it into a web component, and ship it!
                             </li>
                             <li>
                                 Your teams can use this highly performant
@@ -512,11 +584,11 @@
                 </section>
 
                 <section>
-                    Summary
+                    <h3>Summary</h3>
                     <ul>
                         <li>
-                            Web Components natively allows you to encapsulate
-                            HTML, CSS and JS to created reusable components for
+                            Web Components natively allow you to encapsulate
+                            HTML, CSS and JS to create reusable components for
                             the web
                         </li>
                         <li>
@@ -529,9 +601,13 @@
                             it a lot more ergonomic to write web components
                         </li>
                         <li>
-                            You can build component libraries, and highly performant components to share across teams
+                            You can build component libraries, and highly
+                            performant components to share across teams
                         </li>
                     </ul>
+                </section>
+                <section>
+                    <h2>Thanks!</h2>
                 </section>
             </div>
         </div>
