@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+        />
+
+        <title>reveal.js</title>
+
+        <link rel="stylesheet" href="../revealjs/dist/reset.css" />
+        <link rel="stylesheet" href="../revealjs/dist/reveal.css" />
+        <link
+            rel="stylesheet"
+            href="../revealjs/dist/theme/black.css"
+            id="theme"
+        />
+
+        <!-- Theme used for syntax highlighted code -->
+        <link
+            rel="stylesheet"
+            href="../revealjs/plugin/highlight/dracula.css"
+            id="highlight-theme"
+        />
+        <style>
+            .horizontal {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="reveal">
+            <div class="slides">
+                <section>
+                    <h2>Going Reactless* with Web Components</h2>
+                </section>
+                <section>
+                    <h2><pre>&gt; whoami</pre></h2>
+                    <ul>
+                        <li>Elton Pinto</li>
+                        <li>
+                            🐝 cs major
+                            <a href="https://www.gatech.edu/">@gatech</a>
+                        </li>
+                        <li>
+                            💻 software engineering intern, innovation lab
+                            <a href="https://www.ncr.com/">@ncr</a>
+                        </li>
+                        <li>🧩 speedcube aficionado</li>
+                        <li>
+                            @1ntEgr8 on
+                            <a href="https://github.com/1ntEgr8">github</a> and
+                            <a href="https://twitter.com/1ntEgr8">twitter</a>
+                        </li>
+                    </ul>
+                </section>
+                <section>
+                    <section>
+                        <div class="horizontal">
+                            <pre>
+                            <code style="min-height: fit-content" data-trim data-line-numbers>
+                                <ncr-payment-portal>
+                                    <ncr-form>
+                                        <ncr-formfield type="text"></ncr-formfield> 
+                                        <ncr-formfield type="email"></ncr-formfield>
+                                        ...
+                                    </ncr-form>
+                                    <ncr-pay-btn></ncr-pay-btn>
+                                </ncr-payment-portal>
+                            </code>
+                        </pre>
+                            <iframe
+                                src="https://docs.google.com/forms/d/e/1FAIpQLSd-4jrD3hRfiO1Yi6kqGhqN-1iUX_NWD1uJaK0C0ftCRzHNJg/viewform?embedded=true"
+                                width="640"
+                                height="400"
+                                frameborder="0"
+                                marginheight="0"
+                                marginwidth="0"
+                                >Loading…</iframe
+                            >
+                        </div>
+                    </section>
+                    <section>
+                        Yes!!! With the Web Components spec, you can tell your
+                        browser to identify these tags as valid HTML tags!
+                    </section>
+                </section>
+
+                <section>
+                    <section>What are Web Components?</section>
+                    <section>
+                        <ul>
+                            <li>supported by the browser natively</li>
+                            <li>lightweight</li>
+                            <li>
+                                framework agnostic
+                                <ul>
+                                    <li>
+                                        Can be used anywhwer HTML is supported
+                                    </li>
+                                    <li>
+                                        Therefore, it is compatible with React,
+                                        Angular, Svelte...
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </section>
+                </section>
+
+                <section>
+                    <section>Showcase</section>
+                    <section>
+                        Google's <code>&lt;model-viewer&gt;</code>
+                        <div class="horizontal">
+                            <model-viewer
+                                src="../assets/Astronaut.glb"
+                                alt="A 3D model of an astronaut"
+                                auto-rotate
+                                camera-controls
+                                style="height: 500px;"
+                            ></model-viewer>
+                        </div>
+                    </section>
+                </section>
+
+                <section>
+                    Why Web Components?
+                </section>
+
+                <section>
+                    <section>Let's build a Web Component!</section>
+                    <section>
+                        What were building?
+                        <p>an element</p>
+                    </section>
+                    <section>
+                        We're going to be using three W3C Specifications
+                        <ul>
+                            <li>Custom Elements</li>
+                            <li>Shadow DOM</li>
+                            <li>Template HTML</li>
+                        </ul>
+                    </section>
+                    <section>
+                        class structure
+                    </section>
+                    <section>
+                        shadow DOM
+                    </section>
+                    <section>
+                        template HTML
+                    </section>
+                    <section>
+                        codepen demo
+                    </section>
+                </section>
+
+                <section>
+                    Before you drink the Kool aid, here are some concerns
+                    <ul>
+                        <li>concern 1</li>
+                        <li>concern 2</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <section>
+                        solutions 
+                    <ul>
+                        <li>solution 1</li>
+                        <li>solution 2</li>
+                    </ul>
+                    </section>
+                    <section>
+                        hybrids code
+                    </section>
+                </section>
+
+                <section>
+                    Do I ditch my favorite front-end framework?
+                    
+                    No! you don't have to do that
+                </section>
+
+                <section>
+                    <section>Let's talk about some use cases!</section>
+                    <section>component libraries</section>
+                    <section>web assembly and shipping performant code</section>
+                    <section>web assembly showcase</section>
+                </section>
+                
+                <section>
+                    Summary
+                </section>
+            </div>
+        </div>
+
+        <script src="../revealjs/dist/reveal.js"></script>
+        <script src="../revealjs/plugin/notes/notes.js"></script>
+        <script src="../revealjs/plugin/markdown/markdown.js"></script>
+        <script src="../revealjs/plugin/highlight/highlight.js"></script>
+        <script>
+            // More info about initialization & config:
+            // - https://revealjs.com/initialization/
+            // - https://revealjs.com/config/
+            Reveal.initialize({
+                hash: true,
+
+                // Learn about plugins: https://revealjs.com/plugins/
+                plugins: [RevealMarkdown, RevealHighlight, RevealNotes]
+            });
+        </script>
+
+        <!-- model viewer -->
+        <script
+            type="module"
+            src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"
+        ></script>
+        <script
+            nomodule
+            src="https://unpkg.com/@google/model-viewer/dist/model-viewer-legacy.js"
+        ></script>
+    </body>
+</html>
