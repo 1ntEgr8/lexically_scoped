@@ -59,6 +59,7 @@ description: My personal website and blog!
                     {{ talk.name }} <small class="muted">{{ talk.date | toDateObj | readableDate }}</small>
                     <br>
                     <small>
+                        📍 {{ talk.event }}<br>
                         {% if talk.slides %}
                             <a href="{{ talk.slides }}">📈 slides</a>
                         {% endif %}

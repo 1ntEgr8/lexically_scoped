@@ -1,1 +1,8 @@
-[]
+[
+    {
+        "name": "Going Reactless* with Web Components",
+        "event": "NCR Global Hackathon and Unconference 2020",
+        "date": "07-16-2020",
+        "slides": "./decks/going-reactless-with-web-components"
+    }
+]

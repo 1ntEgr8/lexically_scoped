@@ -56,10 +56,11 @@ module.exports = eleventyConfig => {
     eleventyConfig.addShortcode("anchored-code", (code, link) => {
         return `<code><a href="${link}" target="_blank">${code}</a></code>`;
     });
-
+    
     // passthrough copy
     eleventyConfig.addPassthroughCopy("assets");
     eleventyConfig.addPassthroughCopy("keybase.txt");
-    eleventyConfig.addPassthroughCopy("decks/revealjs");
     eleventyConfig.addPassthroughCopy("decks/assets");
+    eleventyConfig.addPassthroughCopy("decks/revealjs");
+    eleventyConfig.addPassthroughCopy("decks/**/*");
 };

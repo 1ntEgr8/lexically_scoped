@@ -7,7 +7,7 @@
             content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
         />
 
-        <title>reveal.js</title>
+        <title>Going Reactless* with Web Components</title>
 
         <link rel="stylesheet" href="../revealjs/dist/reset.css" />
         <link rel="stylesheet" href="../revealjs/dist/reveal.css" />
@@ -29,7 +29,28 @@
                 justify-content: center;
                 align-items: center;
             }
+            .accent {
+                color: #ffa766;
+            }
+            .bold {
+                font-weight: bold;
+            }
+            .mono {
+                font-family: monospace;
+            }
         </style>
+        <!-- model viewer -->
+        <script
+            type="module"
+            src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"
+        ></script>
+        <script
+            nomodule
+            src="https://unpkg.com/@google/model-viewer/dist/model-viewer-legacy.js"
+        ></script>
+        
+        <!-- ERD editor -->
+        <script src="https://cdn.jsdelivr.net/npm/vuerd/dist/vuerd.min.js"></script>
     </head>
     <body>
         <div class="reveal">
@@ -59,6 +80,7 @@
                 </section>
                 <section>
                     <section>
+                        A question...
                         <div class="horizontal">
                             <pre>
                             <code style="min-height: fit-content" data-trim data-line-numbers>
@@ -84,37 +106,71 @@
                         </div>
                     </section>
                     <section>
-                        Yes!!! With the Web Components spec, you can tell your
-                        browser to identify these tags as valid HTML tags!
-                    </section>
-                </section>
-
-                <section>
-                    <section>What are Web Components?</section>
-                    <section>
+                        <h3>Yes!!!</h3>
                         <ul>
-                            <li>supported by the browser natively</li>
-                            <li>lightweight</li>
                             <li>
-                                framework agnostic
-                                <ul>
-                                    <li>
-                                        Can be used anywhwer HTML is supported
-                                    </li>
-                                    <li>
-                                        Therefore, it is compatible with React,
-                                        Angular, Svelte...
-                                    </li>
-                                </ul>
+                                With
+                                <a href="https://github.com/w3c/webcomponents"
+                                    >Web Components</a
+                                >, you can define your own custom HTML tags
+                            </li>
+                            <li>
+                                The browser will use the definition you provided
+                                to render HTML and CSS, and will run any
+                                pertaining JS
                             </li>
                         </ul>
                     </section>
                 </section>
 
                 <section>
-                    <section>Showcase</section>
+                    <section><h3>What are Web Components?</h3></section>
                     <section>
-                        Google's <code>&lt;model-viewer&gt;</code>
+                        <ul>
+                            <li>
+                                A collection of technologies that allow you to
+                                create
+                                <span class="accent bold">reusable</span> and
+                                <span class="accent bold">encapsulated</span>
+                                components
+                            </li>
+                            <li>
+                                Supported natively by every browser
+                                <ul>
+                                    <li>
+                                        no framework required<span class="accent">*</span>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>Lightweight</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h3>Framework agnostic</h3>
+                        <ul>
+                            <li>
+                                Can be used
+                                <span class="accent bold">anywhwere</span> HTML
+                                is supported
+                            </li>
+                            <li>
+                                &#8756; you can use it in
+                                <a href="https://reactjs.org/">React</a>,
+                                <a href="https://angular.io/">Angular</a>,
+                                <a href="https://svelte.dev/">Svelte</a>,
+                                <a href="https://preactjs.com/">Preact</a>, ...
+                            </li>
+                        </ul>
+                    </section>
+                </section>
+
+                <section>
+                    <section><h3>Showcase</h3></section>
+                    <section>
+                        <a class="mono" href="https://modelviewer.dev/"
+                            >&lt;model-viewer&gt;</a
+                        >
+                        by Google
                         <div class="horizontal">
                             <model-viewer
                                 src="../assets/Astronaut.glb"
@@ -125,17 +181,23 @@
                             ></model-viewer>
                         </div>
                     </section>
+                    <section style="width: 100%;" id="erd">
+                        ERD Editor
+                        <erd-editor width="1000" height="500"></erd-editor>
+                        <small>Note: keyboard shortcut to advance to next slide is disabled. Click the arrow buttons on the bottom right to navigate.</small>
+                    </section>
                 </section>
 
                 <section>
-                    Why Web Components?
-                </section>
-
-                <section>
-                    <section>Let's build a Web Component!</section>
+                    <section><h3>Let's build a Web Component!</h3></section>
                     <section>
-                        What were building?
-                        <p>an element</p>
+                        What are we building?
+                        <p class="mono">
+                            &lt;my-incdec&gt;
+                        </p>
+                        <div class="horizontal">
+                            <my-incdec></my-incdec>
+                        </div>
                     </section>
                     <section>
                         We're going to be using three W3C Specifications
@@ -169,11 +231,11 @@
 
                 <section>
                     <section>
-                        solutions 
-                    <ul>
-                        <li>solution 1</li>
-                        <li>solution 2</li>
-                    </ul>
+                        solutions
+                        <ul>
+                            <li>solution 1</li>
+                            <li>solution 2</li>
+                        </ul>
                     </section>
                     <section>
                         hybrids code
@@ -181,9 +243,8 @@
                 </section>
 
                 <section>
-                    Do I ditch my favorite front-end framework?
-                    
-                    No! you don't have to do that
+                    Do I ditch my favorite front-end framework? No! you don't
+                    have to do that
                 </section>
 
                 <section>
@@ -192,7 +253,7 @@
                     <section>web assembly and shipping performant code</section>
                     <section>web assembly showcase</section>
                 </section>
-                
+
                 <section>
                     Summary
                 </section>
@@ -211,18 +272,17 @@
                 hash: true,
 
                 // Learn about plugins: https://revealjs.com/plugins/
-                plugins: [RevealMarkdown, RevealHighlight, RevealNotes]
+                plugins: [RevealMarkdown, RevealHighlight, RevealNotes],
+            });
+
+            Reveal.on( 'slidechanged', event => {
+                if (event.currentSlide.id == "erd") {
+                    Reveal.configure({ keyboard: false });
+                } else {
+                    Reveal.configure({ keyboard: true });
+                }
             });
         </script>
-
-        <!-- model viewer -->
-        <script
-            type="module"
-            src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"
-        ></script>
-        <script
-            nomodule
-            src="https://unpkg.com/@google/model-viewer/dist/model-viewer-legacy.js"
-        ></script>
+        <script src="index.js"></script>
     </body>
 </html>
