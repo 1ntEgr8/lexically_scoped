@@ -86,6 +86,13 @@ mod tests {
                                   .collect();
         assert_eq!(merged, "alphabetagamma");
     }
+
+    #[test]
+    fn empty_middle() {
+        let words = ["alpha", "", "beta", "", "", "gamma"];
+        let merged: String = flat_map(words.iter(), |s| s.chars()).collect();
+        assert_eq!(merged, "alphabetagamma");
+    }
 }
 ```
 
@@ -95,7 +102,7 @@ A couple of things to note:
 
 The first three tests are pretty basic. Each one executes `flat_map` and checks if it returns the current number of elements.
 
-The last one is the most interesting one. It's straight from the standard library documentation, but adapted to our api. The expected behavior of running `flat_map` using the specified closure is that it should run `chars()` on each input element, resulting in a list of iterators over the characters in each`str`. Then it should flatten each iterator in the list resulting in an iterator yielding `char`s. Using `collect()` and type coercion, this iterator is collected into a `String` and asserted with the expected output.
+The last two tests are the most interesting ones. The first one is straight from the standard library documentation, but adapted to our api. The expected behavior of running `flat_map` using the specified closure is that it should run `chars()` on each input element, resulting in a list of iterators over the characters in each`str`. Then it should flatten each iterator in the list resulting in an iterator yielding `char`s. Using `collect()` and type coercion, this iterator is collected into a `String` and asserted with the expected output. The second one augments it by add empty strings in between. The function should continue to iterate over the rest of the list of `chars`, even if it encounters an empty string. 
 
 ## A first pass
 
@@ -280,6 +287,8 @@ To solve this problem, we need some way of persisting that **inner** iterator re
 
 Whenever we call `next` on `iter`, we will persist the iterator we get in `inner`. Then, on subsequent calls to `next` on `FlatMap`, we will first consume `inner`. Once `inner` is consumed, we will call `next` on `iter` and repeat the process.
 
+There is one issue that we still need to fix. What should we do if the inner iterator itself has nothing to iterate over, i.e., it returns `None` on the first call to `next()`? The expected behavior is to continue to iterate over the outer list until you find an inner iterator that returns something. To handle this case, we can simple wrap our logic in a `loop` and return as soon as the inner iterator returns something, or we've completely iterated over the outer iterator.
+
 Let's code this out!
 
 ```rust
@@ -291,13 +300,13 @@ where
 {
     type Item = B::Item; 
     fn next(&mut self) -> Option<Self::Item> {
-        if let Some(ref mut inner) = self.inner {
-            if let Some(val) = inner.next() {
-                return Some(val);
-            }
+        loop {
+            if let Some(ref mut inner) = self.inner {
+                if let Some(val) = inner.next() {
+                    return Some(val);
+                }
+            self.inner = Some((self.f)(self.iter.next()?).into_iter());
         }
-        self.inner = Some((self.f)(self.iter.next()?).into_iter());
-        self.inner.as_mut()?.next()
     }
 }
 ```
@@ -307,19 +316,16 @@ Awesome, now let's run the tests...
 ```bash
 > cargo test
 
-Compiling flat_map v0.1.0 (/Users/eltonpinto/dev/learn/rust_iterators/flat_map)
-    Finished test [unoptimized + debuginfo] target(s) in 0.55s
-     Running target/debug/deps/flat_map-1bcf67ed8ede3985
-
-running 4 tests
-test tests::from_std_lib_test ... ok
+running 5 tests
 test tests::empty ... ok
+test tests::empty_middle ... ok
 test tests::simple ... ok
+test tests::from_std_lib_test ... ok
 test tests::simple_wide ... ok
 
-test result: ok. 4 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out
+test result: ok. 5 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out
 
-   Doc-tests flat_map
+   Doc-tests flatmap
 
 running 0 tests
 
@@ -416,3 +422,5 @@ mod tests {
     }
 }
 ```
+
+P.S: My initial implementation did not handle the `empty_middle` test case. Huge thanks to Domantas, Rodrigo, and Paul for spotting the bug!
