@@ -75,27 +75,23 @@ title: lexically::scoped | resume
                         <ul>
                             <li>
                                 <strong>Concentrations:</strong>
-                                <div>
-                                    {% for concentration in resume.concentrations %}
-                                        {% if not loop.last %}
-                                            {{ concentration }},
-                                        {% else %}
-                                            {{ concentration }}
-                                        {% endif %}
-                                    {% endfor %}
-                                </div>
+                                {% for concentration in resume.concentrations %}
+                                    {% if not loop.last %}
+                                        {{ concentration }},
+                                    {% else %}
+                                        {{ concentration }}
+                                    {% endif %}
+                                {% endfor %}
                             </li>
                             <li>
                                 <strong>Selected Coursework:</strong>
-                                <div>
-                                    {% for course in resume.selectedCoursework %}
-                                        {% if not loop.last %}
-                                            {{ course }},
-                                        {% else %}
-                                            {{ course }}
-                                        {% endif %}
-                                    {% endfor %}
-                                </div>
+                                {% for course in resume.selectedCoursework %}
+                                    {% if not loop.last %}
+                                        {{ course }},
+                                    {% else %}
+                                        {{ course }}
+                                    {% endif %}
+                                {% endfor %}
                             </li>
                         </ul>
                     </div>
