@@ -1,0 +1,49 @@
+{
+    "concentrations": [
+        "Computer Systems and Architecture",
+        "Theory"
+    ],
+    "selectedCoursework": [
+        "Data Structures & Algorithms",
+        "Advanced Algorithms",
+        "Computer Organization",
+        "Systems & Networks",
+        "Operating Systems",
+        "Computer Vision",
+        "Applied Combinatorics"
+    ],
+    "skills": {
+        "languages": [
+            "Rust",
+            "JavaScript",
+            "TypeScript",
+            "C",
+            "Java",
+            "Python",
+            "Haskell",
+            "Go",
+            "Bash",
+            "Elm",
+            "C#"
+        ],
+        "technologies": [
+            "git",
+            "vim",
+            "React",
+            "Node.js",
+            "Express",
+            "WebSockets",
+            "Cloud Computing",
+            "Docker",
+            "Kubernetes",
+            "FP"
+        ],
+        "interests": [
+            "Compilers",
+            "Operating Systems",
+            "Web Development",
+            "Speed-cubing",
+            "Origami"
+        ]
+    }
+}

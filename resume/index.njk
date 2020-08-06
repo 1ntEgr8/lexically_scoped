@@ -75,11 +75,27 @@ title: lexically::scoped | resume
                         <ul>
                             <li>
                                 <strong>Concentrations:</strong>
-                                <span>Computer Systems and Architecture, Theory</span>
+                                <div>
+                                    {% for concentration in resume.concentrations %}
+                                        {% if not loop.last %}
+                                            {{ concentration }},
+                                        {% else %}
+                                            {{ concentration }}
+                                        {% endif %}
+                                    {% endfor %}
+                                </div>
                             </li>
                             <li>
                                 <strong>Selected Coursework:</strong>
-                                <span>Data Structures & Algorithms, Advanced Algorithms, Computer Systems and Networks, Operating Systems, Computer Vision, Intro to AI</span>
+                                <div>
+                                    {% for course in resume.selectedCoursework %}
+                                        {% if not loop.last %}
+                                            {{ course }},
+                                        {% else %}
+                                            {{ course }}
+                                        {% endif %}
+                                    {% endfor %}
+                                </div>
                             </li>
                         </ul>
                     </div>
@@ -90,6 +106,43 @@ title: lexically::scoped | resume
         <section>
             <h2>Experience</h2>
             <div class="resume__container">
+                <div class="resume__container__item">
+                    <div class="resume__container__item__row--header">
+                        <span>
+                            <strong>Software Engineering Intern, Innovation Lab, NCR</strong>
+                            <span class="small">
+                                Atlanta, GA
+                            </span>
+                        </span>
+                        <span class="small muted">
+                            June 2020 - Aug 2020 
+                        </span>
+                    </div>
+                    <div class="resume__container__item__row">
+                        <ul>
+                            <li>
+                                Developed a subscription recommendation model using backtesting with a standard deviation heuristic
+                                <ul>
+                                    <li>Built a React frontend that queries the model, and displays results on an interactive timeline</li>
+                                    <li>Scored 40% on recommending subscriptions for replenishment using the F1 metric</li>
+                                    <li>Co-authored a report that makes a business case for the model, and data acquisition needed to improve it</li>
+                                </ul>
+                            </li>
+                            <li>
+                                Expanded the consumer profile API to manage and isolate profiles across merchants
+                                <ul>
+                                    <li>Implemented server routes in Express to create and update consumer profiles using NCR’s CDM API</li>
+                                    <li>Built a React Native frontend that showcases linking profiles, and making multi-vendor purchases</li>
+                                    <li>Enhanced the CI pipeline by debugging a GitHub action that lints source files</li>
+                                </ul>
+                            </li>
+                            <li>
+                                Gave a talk on using Web Components to build reusable UI elements at the NCR Global Unconference
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
                 <div class="resume__container__item">
                     <div class="resume__container__item__row--header">
                         <span>
@@ -153,24 +206,24 @@ title: lexically::scoped | resume
             <div class="resume__container">
                 <div class="resume__container__item">
                     <div class="resume__container__item__row">
+                        You can find my personal projects on <a href="{{ me.socials.github }}">github</a>
+                        <br>
+                        <br>
+                        <strong><em>Open source contributions</em></strong> 
                         <ul>
                             <li>
-                                <strong><a href="https://github.com/1ntEgr8/hn">hn</a></strong>
-                                <p>
-                                    Developed a HackerNews CLI in Rust. Displays the top 30 stories by manipulating the terminal tty in raw mode, supports save-for-later, and uses vim-style navigation to view stories. Available on homebrew.
-                                </p>
+                                <a href="https://github.com/nushell/nushell">nushell</a>: A new kind of shell implemented in Rust
+                                <ul>
+                                    <li>Implemented the <code>start</code> command which lets users open files and applications using the system default</li>
+                                    <li>Added a <code>--save</code> flag to the <code>alias</code> command, allowing users to save aliases to the startup file on the go</li>
+                                </ul>
                             </li>
                             <li>
-                                <strong><a href="https://github.com/1ntEgr8/emojic">emojic</a></strong>
-                                <p>
-                                    Created a tool that generates an emojified FFT visualization of an mp3 song on a browser. The tool transforms the lyrics into emoji, and then render 256 dancing emojis with little-to-no lag.
-                                </p>
-                            </li>
-                            <li>
-                                <strong><a href="https://github.com/HackGT/mapGTEditor">mapGT</a></strong>
-                                <p>
-                                    Built a fully-featured JavaScript SVG editor that allows HackGT members to create interactive maps on the fly. Authored a supporting library that provides developers with an API to create interactive experiences using the exported map. Engineered the editor to be a PWA.
-                                </p>
+                                <a href="https://github.com/romefrontend/rome">romejs</a>: An experimental JavaScript toolchain
+                                <ul>
+                                    <li>Added a lint that checks for empty and infinite matches in a regex expression</li>
+                                    <li>Implemented a command that generates shell autocompletion scripts for fish and bash</li>
+                                </ul>
                             </li>
                         </ul>
                     </div>
@@ -186,7 +239,7 @@ title: lexically::scoped | resume
                         <span>
                             <strong>HackGT</strong>
                             <span class="small">
-                                Software Developer
+                                Software Developer, Horizons event lead
                             </span>
                         </span>
                         <span class="small muted">
@@ -195,34 +248,26 @@ title: lexically::scoped | resume
                     </div>
                     <div class="resume__container__item__row">
                         <ul>
+                            <li>Helped organize HackGT (a 1000+ participant hackathon), BuildGT, and Horizons</li>
+                            <li>Mentored Atlanta high school students at Catalyst, a 200+ participant learnathon</li>
+                            <li>Lead a team of 20 people to host Horizons, an arts + tech hackathon which attracted over 300 participants</li>
+                            <li>Leading a team of 4 people to build a Web Components library as part of the rebranding initiative</li>
                             <li>
-                                Helped organize HackGT (a 1000+ participant hackathon), BuildGT, and Horizons
-                            </li>
-                            <li>
-                                Mentored Atlanta high school students at Catalyst, a 200+ participant learnathon
-                            </li>
-                            <li>
-                                Created mapGT; Programmed a calibration system for HackGT’s hackathon application review SlackBot that reduced application review time from weeks to 3-4 days.
-                            </li>
-                            <li>
-                                Leading a team of 20 people and coordinating efforts across research labs and student orgs to host Horizons
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="resume__container__item">
-                    <div class="resume__container__item__row--header">
-                        <span>
-                            <strong>Bits of Good</strong>
-                        </span>
-                        <span class="small muted">
-                            Aug 2019 - Dec 2019 
-                        </span>
-                    </div>
-                    <div class="resume__container__item__row">
-                        <ul>
-                            <li>
-                                Developed a search engine that helps Medshare’s 20,000 volunteers in inventory management by replacing the old paper-based system.
+                                Selected tech projects:
+                                <ul>
+                                    <li>
+                                        <a href="https://www.github.com/HackGT/enzo">
+                                            <strong>enzo</strong>
+                                        </a>:
+                                        A tool that automates managing and deploying HackGT’s tech products on GCP. Implemented an execution engine to run configuration yaml files (similar to GitHub Actions). Written in Rust.
+                                    </li>
+                                    <li>
+                                        <a href="https://love-handle.hack.gt/">
+                                            <strong>HackGT 7 puzzle</strong>
+                                        </a>:
+                                        Designed an admissions puzzle. Implemented a web based clone of Windows 98 through 10, complete with a virtual file system and terminal using Web Components.
+                                    </li>
+                                </ul>
                             </li>
                         </ul>
                     </div>
@@ -235,18 +280,18 @@ title: lexically::scoped | resume
             <div class="resume__container__item">
                 <div class="resume__container__item__row">
                     <ul>
-                        <li>
-                            <strong>Languages:</strong>
-                            Rust, JavaScript, TypeScript, C, Java, C#, Python, Elm, Go, Haskell, bash
-                        </li>
-                        <li>
-                            <strong>Technologies:</strong>
-                            git, vim, React, Node.js, Express, WebSockets, Flask, Google Cloud, Docker, Kubernetes, FP, OOP
-                        </li>
-                        <li>
-                            <strong>Interests:</strong>
-                            Compilers, Web Development, Speed-cubing, Origami, Music, emoji
-                        </li>
+                        {% for skill, items in resume.skills %}
+                            <li>
+                                <strong>{{ skill | capitalize }}:</strong>
+                                {% for item in items %}
+                                    {% if not loop.last %}
+                                        {{ item }},
+                                    {% else %}
+                                        {{ item }}
+                                    {% endif %}
+                                {% endfor %}
+                            </li>
+                        {% endfor %}
                     </ul>
                 </div>
             </div>
