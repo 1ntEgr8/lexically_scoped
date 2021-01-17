@@ -52,11 +52,7 @@ p code {
     border-radius: 3px;
 }
 
-p {
-    line-height: 2rem;
-}
-
-h1, h2, p {
+h1, h2 {
     padding: 5px 0px;
 }
 
