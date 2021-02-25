@@ -1,11 +1,12 @@
 /* TODO modify light mode colors */
 :root {
     /* fonts */
-    --font: Roboto, 'sans-serif';
+    --font: Inter, 'sans-serif';
     --title-font: Inter, 'sans-serif';
     
     /* colors */
-    --bg-color: #1e1e1e;
+    /* --bg-color: #1e1e1e; */
+    --bg-color: black;
     --primary-color: #efefef;
     --secondary-color-1: #afafff;
     --secondary-color-2: #ffa766;
@@ -61,6 +62,7 @@ blockquote {
     padding-left: 20px;
     color: #b1b1b1;
     border-left: 5px #b1b1b1 solid;
+    font-style: italic;
 }
 
 .download-btn {
@@ -103,23 +105,33 @@ blockquote {
     font-size: 2.5rem;
 }
 
+.content h1, h2 {
+    font-weight: normal;
+}
+
+.content p + h2 {
+    padding-top: 30px;
+}
+
 .content a {
-    color: var(--secondary-color-1);
-    font-weight: 700;
-    text-decoration: none;
-    border-bottom: 2px solid var(--secondary-color-1);
+    color: var(--primary-color);
+    /* font-weight: 700; */
+    /* text-decoration: none; */
+    /* border-bottom: 2px solid var(--secondary-color-1); */
     transition: opacity 0.2s ease-in;
 }
 
 .content a:hover {
     filter: brightness(1.1);
-    border-bottom: 2.5px solid var(--secondary-color-1);
+    /* border-bottom: 2.5px solid var(--secondary-color-1); */
 }
 
-.content a:visited { }
+.content a:visited {
+    color: var(--muted);
+}
 
 .content section {
-    padding-bottom: 20px;
+    padding-bottom: 10px;
 }
 
 .post {
@@ -133,7 +145,7 @@ blockquote {
 .post__title {
     font-size: 2rem;
     padding-bottom: 10px;
-    color: var(--secondary-color-2);
+    color: var(--primary-color);
 }
 
 @media (prefers-color-scheme: dark) {

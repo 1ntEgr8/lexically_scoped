@@ -8,7 +8,7 @@ title: lexically::scoped | blog
     <div>
         {%- for post in collections.post | reverse -%}
         <div class="post">
-            <a href={{ post.url }}>
+            <a href={{ post.url }} style="text-decoration: none;">
                 <article class="post__title">{{ post.data.title | safe }}</article>
             </a>
             <time class="post__date" datetime="{{ post.data.date | htmlDateString }}">{{ post.data.date | readableDate }}</time>
