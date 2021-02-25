@@ -55,6 +55,7 @@ p code {
 
 h1, h2 {
     padding: 5px 0px;
+    line-height: 100%;
 }
 
 blockquote {
@@ -152,5 +153,31 @@ blockquote {
     :root {
         --bg-color: #1e1e1e;
         --primary-color: #efefef;
+    }
+}
+
+@media (max-width: 400px) {
+    body {
+        font-size: 16px;
+    }
+    
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+    
+    .splash__title {
+        font-size: 2.5rem;
+    }
+    
+    .post__title {
+        font-size: 1.5rem;
+    }
+
+    .content {
+        margin: 0px 15% 0 15%;
     }
 }
