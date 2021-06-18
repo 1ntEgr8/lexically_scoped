@@ -57,6 +57,15 @@ module.exports = eleventyConfig => {
         return `<code><a href="${link}" target="_blank">${code}</a></code>`;
     });
     
+    // handle draft posts 
+    const now = new Date();
+    eleventyConfig.addCollection("posts", collection => {
+        return collection
+            .getFilteredByGlob("./blog/posts/*.md")
+            .filter(post => post.date <= now && !post.data.draft);
+    });
+
+    
     // passthrough copy
     eleventyConfig.addPassthroughCopy("assets");
     eleventyConfig.addPassthroughCopy("keybase.txt");
