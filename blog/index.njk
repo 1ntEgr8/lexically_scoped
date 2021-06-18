@@ -6,7 +6,7 @@ title: lexically::scoped | blog
 <div class="content">
     <h2><span style="padding-right: 10px;">🎯</span> lexically :: scoped</h2>
     <div>
-        {%- for post in collections.post | reverse -%}
+        {%- for post in collections.posts | reverse -%}
         <div class="post">
             <a href={{ post.url }} style="text-decoration: none;">
                 <article class="post__title">{{ post.data.title | safe }}</article>
