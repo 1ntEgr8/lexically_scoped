@@ -6,10 +6,11 @@
     "selectedCoursework": [
         "Data Structures & Algorithms",
         "Advanced Algorithms",
-        "Computer Organization",
+        "Operating Systems Design",
+        "High-Performance Computer Architecture",
         "Systems & Networks",
-        "Operating Systems",
-        "Computer Vision",
+        "Compilers",
+        "Programming Languages Design",
         "Applied Combinatorics"
     ],
     "skills": {
@@ -23,27 +24,20 @@
             "Haskell",
             "OCaml",
             "Go",
-            "Bash",
-            "Elm"
+            "Bash"
         ],
         "technologies": [
             "git",
-            "vim",
-            "React",
-            "Node.js",
-            "Express",
-            "WebSockets",
-            "Cloud Computing",
+            "Linux",
             "Docker",
-            "Kubernetes",
-            "FP"
+            "OOP",
+            "Functional programming"
         ],
         "interests": [
+            "PL design",
             "Compilers",
             "Operating Systems",
-            "Web Development",
-            "Speed-cubing",
-            "Origami"
+            "Quantum Computing"
         ]
     }
 }

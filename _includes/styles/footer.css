@@ -22,7 +22,7 @@
 }
 
 .footer__social__item--separator {
-    color: var(--secondary-color-1);
+    color: var(--primary-color);
     font-size: 1.5rem;
 }
 

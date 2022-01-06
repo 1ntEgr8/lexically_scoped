@@ -1,17 +1,10 @@
-/* TODO modify light mode colors */
 :root {
     /* fonts */
-    --font: Inter, 'sans-serif';
-    --title-font: Inter, 'sans-serif';
-    
-    /* colors */
-    /* --bg-color: #1e1e1e; */
-    --bg-color: black;
-    --primary-color: #efefef;
-    --secondary-color-1: #afafff;
-    --secondary-color-2: #ffa766;
-    --success-color: #68ff82;
-    --muted: #969696;
+    --font: sans-serif;
+    --title-font: sans-serif;
+
+    /* colors (for dark-mode theme, see media query below) */
+    /* TODO light mode colors */
 }
 
 html {
@@ -32,6 +25,13 @@ body {
     font-size: 1.1rem;
     color: var(--primary-color);
     background: var(--bg-color);
+}
+
+main, nav {
+    margin: 0rem auto;
+    max-width: 50rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
 }
 
 main {
@@ -84,22 +84,22 @@ blockquote {
 }
 
 .splash {
+/*
     display: flex;
     justify-content: center;
     align-items: center;
+*/
 }
 
 .splash__title {
     color: var(--primary-color);
     font-family: var(--title-font);
-    font-size: 3.5rem;
-    font-weight: 700;
-    text-shadow: 5px 5px 5px black;
+    font-size: 2.5rem;
+    /* text-shadow: 5px 5px 5px black; */
 }
 
 .content {
     line-height: 150%;
-    margin: 0px 20% 0 20%;
 }
 
 .content h1 {
@@ -116,15 +116,11 @@ blockquote {
 
 .content a {
     color: var(--primary-color);
-    /* font-weight: 700; */
-    /* text-decoration: none; */
-    /* border-bottom: 2px solid var(--secondary-color-1); */
     transition: opacity 0.2s ease-in;
 }
 
 .content a:hover {
     filter: brightness(1.1);
-    /* border-bottom: 2.5px solid var(--secondary-color-1); */
 }
 
 .content a:visited {
@@ -153,6 +149,14 @@ blockquote {
     :root {
         --bg-color: #1e1e1e;
         --primary-color: #efefef;
+        --secondary-color-1: #afafff;
+        --secondary-color-2: #afafff;
+        /*
+        --secondary-color-1: #afafff;
+        --secondary-color-2: #ffa766;
+        */
+        --success-color: #68ff82;
+        --muted: #969696;
     }
 }
 
