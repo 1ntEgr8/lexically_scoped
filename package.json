@@ -11,8 +11,7 @@
   "license": "ISC",
   "devDependencies": {
     "@11ty/eleventy": "^0.12.1",
-    "@11ty/eleventy-plugin-syntaxhighlight": "^3.0.1",
-    "bibtex-parser": "^0.0.0"
+    "@11ty/eleventy-plugin-syntaxhighlight": "^3.0.1"
   },
   "dependencies": {
     "clean-css": "^4.2.3",
