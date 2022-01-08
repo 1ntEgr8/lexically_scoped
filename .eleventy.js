@@ -56,8 +56,8 @@ module.exports = eleventyConfig => {
     eleventyConfig.addShortcode("anchored-code", (code, link) => {
         return `<code><a href="${link}" target="_blank">${code}</a></code>`;
     });
-    
-    // handle draft posts 
+
+    // handle draft posts
     const now = new Date();
     eleventyConfig.addCollection("posts", collection => {
         return collection
@@ -65,7 +65,8 @@ module.exports = eleventyConfig => {
             .filter(post => post.date <= now && !post.data.draft);
     });
 
-    
+    // TODO add .bib as custom data format
+
     // passthrough copy
     eleventyConfig.addPassthroughCopy("assets");
     eleventyConfig.addPassthroughCopy("keybase.txt");

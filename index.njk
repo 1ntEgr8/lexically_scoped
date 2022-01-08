@@ -16,14 +16,20 @@ description: My personal website and blog!
 <div class="content">
     <section>
         <p>
-            I'm an undergrad studying Computer Science at <a href="{{ gatech.main }}" target="_blank">Georgia Tech</a>. My interests include compilers, programming languages, quantum computing, and operating systems.
+            I'm an undergrad studying Computer Science at Georgia Tech. My interests include compilers, programming languages, quantum computing, and operating systems.
         </p>
 
         <h3>Research</h3>
         <p> I'm part of the <a href="http://prod.tinker.cc.gatech.edu/" target="_blank">TINKER lab</a> at Georgia Tech. My research revolves around Grover oracle implementations and synthesis. I'm advised by <a href="https://www.scs.gatech.edu/people/thomas-conte" target="_blank">Dr. Thomas Conte</a> and <a href="https://www.cc.gatech.edu/people/jeffrey-young" target="_blank">Dr. Jeff Young</a>.</p>
 
+        <small><a href="#publications">View publications</a></small>
+
         <h3>Experience</h3>
-        I've interned on the PyTorch Dev Infra team at Meta and the Innovation Lab at NCR. My <a href="/resume">resume</a> has more details.
+        <p>
+        I've interned on the PyTorch Dev Infra team at Meta and the Innovation Lab at NCR.
+        </p>
+
+        <small><a href="/resume">View resume</a></small>
 
         <h3>Involvements</h3>
 
@@ -67,7 +73,7 @@ description: My personal website and blog!
     </section>
 
     <section>
-        <h2> Recent posts </h2>
+        <h2> Posts </h2>
         <ul>
             {%- for post in collections.posts | reverse -%}
                 <li>
@@ -75,6 +81,17 @@ description: My personal website and blog!
                     <small class="muted">{{ post.data.date | readableDate }}</small>
                 </li>
             {%- endfor -%}
+        </ul>
+    </section>
+
+    <section id="publications">
+        <h2> Publications </h2>
+        <ul>
+            <li>
+	            Austin Adams, Elton Pinto, Jeffrey Young, Creston Herold, Eugene Dumitrescu, and Thomas M. Conte.
+	            "Enabling a Programming Environment for an Experimental Ion Trap Quantum Testbed."
+	            <em>2021 International Conference on Rebooting Computing (ICRC 2021)</em>
+            </li>
         </ul>
     </section>
 
