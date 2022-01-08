@@ -1,6 +1,5 @@
 .nav {
-    font-family: var(--font);
-    width: 100%;
+    font-family: var(--primary-font);
 }
 
 .nav__list {
@@ -19,11 +18,9 @@
 }
 
 .nav__list__item a {
-    color: var(--muted);
+    color: var(--primary-color);
     font-size: 1.1rem;
-    /* font-weight: 700; */
     text-decoration: none;
-    transition: color 0.2s ease-in;
 }
 
 .nav__list__item a:hover {
