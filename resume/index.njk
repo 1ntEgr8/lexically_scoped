@@ -45,7 +45,7 @@ title: lexically::scoped | resume
         <div class="resume__header">
             <h1>{{ me.name }}</h1>
             <div>
-                <a href="https://drive.google.com/file/d/1nxhDVAbAJxT8Xm-L1jC4rlM4dLpV-UGH/view?usp=sharing" target="_blank">
+                <a href="/assets/resume.pdf" target="_blank">
                     view as pdf
                 </a>
             </div>
@@ -104,7 +104,7 @@ title: lexically::scoped | resume
                 <div class="resume__container__item">
                     <div class="resume__container__item__row--header">
                         <span>
-                            <strong>Software Engineering Intern, Facebook</strong>
+                            <strong>Software Engineering Intern, PyTorch Dev Infra, Meta</strong>
                             <span class="small">
                                 Menlo Park, CA
                             </span>
@@ -114,7 +114,32 @@ title: lexically::scoped | resume
                         </span>
                     </div>
                     <div class="resume__container__item__row">
-                        <em>Incoming</em>
+                        <ul>
+                          <li>
+                            Patched clang-tidy to support a <code>max-tokens</code>
+                            pragma which alerts when the number of tokens in a
+                            source file exceeds the specified amount
+                          </li>
+                          <li>
+                            Authored a custom clang-tidy check to detect infinite loops
+                          </li>
+                          <li>
+                            Developed the infrastructure to build, test, and
+                            deploy a custom build of clang-tidy in PyTorch CI
+                            using Docker and GitHub Actions
+                          </li>
+                          <li>
+                            Ported <code>reflection_pad1d_backward</code> to the structured kernel model
+                          </li>
+                          <li>
+                            Authored an internal blog post documenting how to
+                            gather compiler profile information, header file
+                            usage, and visualize it using <code>chrome://tracing</code>
+                          </li>
+                          <li>
+                            Presented my work before the Meta AI Division
+                          </li>
+                        </ul>
                     </div>
                 </div>
 
@@ -135,21 +160,20 @@ title: lexically::scoped | resume
                             <li>
                                 Developed a subscription recommendation model using backtesting with a standard deviation heuristic
                                 <ul>
-                                    <li>Built a React frontend that queries the model, and displays results on an interactive timeline</li>
+                                    <li>Built a React frontend that queries the model and displays results on an interactive timeline</li>
                                     <li>Scored 40% on recommending subscriptions for replenishment using the F1 metric</li>
-                                    <li>Co-authored a report that makes a business case for the model, and data acquisition needed to improve it</li>
+                                    <li>Co-authored a report that makes a business case for the model and data acquisition needed to improve it</li>
                                 </ul>
                             </li>
                             <li>
                                 Expanded the consumer profile API to manage and isolate profiles across merchants
                                 <ul>
                                     <li>Implemented server routes in Express to create and update consumer profiles using NCR’s CDM API</li>
-                                    <li>Built a React Native frontend that showcases linking profiles, and making multi-vendor purchases</li>
-                                    <li>Enhanced the CI pipeline by debugging a GitHub action that lints source files</li>
+                                    <li>Built a React Native frontend that showcases linking profiles and making multi-vendor purchases</li>
                                 </ul>
                             </li>
                             <li>
-                                Gave a talk on using Web Components to build reusable UI elements at the NCR Global Unconference
+                                Delivered a talk on using Web Components to build reusable UI elements at the NCR Global Unconference
                             </li>
                         </ul>
                     </div>
@@ -171,9 +195,6 @@ title: lexically::scoped | resume
                         <ul>
                             <li>
                                 Enhanced the Emerald POS test suite with 7 automated test scripts written in C# using Selenium
-                            </li>
-                            <li>
-                                Reduced the running time of the test suite by 75% by optimizing the existing codebase
                             </li>
                             <li>
                                 Worked with a global team to certify the Emerald POS product release for Northgate
@@ -198,10 +219,25 @@ title: lexically::scoped | resume
                     </div>
                     <div class="resume__container__item__row">
                         <ul>
-                            <li>CS 3210: Design of Operating Systems (Current)</li>
-                            <li>CS 2110: Computer Organization and Architecture</li>
-                            <li>CS 1301: Intro to Computing</li>
-                            <li>PHYS 2211: Intro to Physics</li>
+                          <li>
+                            Design of Operating Systems (CS 3210) 
+                            <span class="small muted">
+                              [Spring 2021, Fall 2021, Spring 2022]
+                            </span>
+                            <ul>
+                              <li>Head TA for Spring 2022</li>
+                              <li>Provided support to students in the form of office hours, Piazza discussions, and developer guides</li>
+                              <li>Developed a course website for easy access and management</li>
+                              <li>Setup a Docker-based developer environment for xv6</li>
+                              <li>Ported our autograder framework to Gradescope to improve reliability and grading efficiency</li>
+                            </ul>
+                          </li>
+                          <li>
+                            Previous courses
+                            <ul>
+                              <li>Computer Architecture and Organization (CS 2110) <span class="small muted">[Spring 2020, Fall 2020]</span></li>
+                              <li>Intro to Computing (CS 1301) <span class="small muted">[Fall 2019]</span></li>
+                            </ul>
                         </ul>
                     </div>
                 </div>
@@ -213,7 +249,7 @@ title: lexically::scoped | resume
             <div class="resume__container">
                 <div class="resume__container__item">
                     <div class="resume__container__item__row">
-                        You can find my personal projects on <a href="{{ me.socials.github }}">github</a>. I enjoy working on open-source projects and contribute patches when I can. Notable projects include PyTorch, GHC, nushell, and romejs.
+                        You can find my personal projects on <a href="{{ me.socials.github }}">GitHub</a>. I enjoy working on open-source projects and contribute patches when I can. Notable projects include PyTorch, nushell, and romejs.
                     </div>
                 </div>
             </div>
@@ -225,38 +261,153 @@ title: lexically::scoped | resume
                 <div class="resume__container__item">
                     <div class="resume__container__item__row--header">
                         <span>
-                            <strong>HackGT</strong>
+                            <strong><a
+                              href="https://dtyped.netlify.app"
+                              target="_blank"
+                            >dependently-typed</a></strong>
                             <span class="small">
-                                Co-director (Current), Software Developer, Horizons event lead
+                                Founder, President
                             </span>
                         </span>
                         <span class="small muted">
-                            Dec 2018 - Present
+                            Aug 2021 - Present
+                        </span>
+                    </div>
+                    <div class="resume__container__item__row">
+                      <ul>
+                        <li>Founded a programming languages and compilers club at Georgia Tech</li>
+                        <li>Coordinated weekly tech talks, tutorials, and paper discussions</li>
+                        <li>Delivered an intro to compilers talk</li>
+                        <li>
+                          Overseeing the development of three projects: 
+                          <ul>
+                            <li>
+                              <a
+                                href="https://dtyped.netlify.app/wiki/projects/pipe-in-python/"
+                                target="_blank"
+                              >Adding a pipe operator to Python</a>
+                            </li>
+                            <li>
+                              <a
+                                href="https://dtyped.netlify.app/wiki/projects/lua-typesystem/"
+                                target="_blank"
+                              >Retrofitting a type system onto Lua
+                              </a>
+                            </li>
+                            <li>
+                              <a
+                                href="https://dtyped.netlify.app/wiki/projects/bel/"
+                                target="_blank"
+                              >Developing an interpreter for Bel
+                              </a>
+                            </li>
+                          </ul>
+                        </li>
+                      </ul>
+                    </div>
+                </div>
+                <div class="resume__container__item">
+                    <div class="resume__container__item__row--header">
+                        <span>
+                            <strong><a 
+                              href="https://hexlabs.org"
+                              target="_blank"
+                            >Hexlabs</a></strong>
+                            <span class="small">
+                                Co-director, Software Developer, Horizons event lead
+                            </span>
+                        </span>
+                        <span class="small muted">
+                            Dec 2018 - November 2021
                         </span>
                     </div>
                     <div class="resume__container__item__row">
                         <ul>
-                            <li>Helped organize HackGT (a 1000+ participant hackathon), BuildGT, and Horizons</li>
-                            <li>Mentored Atlanta high school students at Catalyst, a 200+ participant learnathon</li>
-                            <li>Lead a team of 20 people to host Horizons, an arts + tech hackathon which attracted over 300 participants</li>
-                            <li>Leading a team of 4 people to build a Web Components library as part of the rebranding initiative</li>
-                            <li>
-                                Selected tech projects:
+                          <li> 
+                            Co-director 
+                            <span class="small muted">
+                              [November 2020 - November 2021]
+                            </span>
+                            <ul>
+                              <li>Led a team of over 80 people to run four hackathons
                                 <ul>
-                                    <li>
-                                        <a href="https://www.github.com/HackGT/enzo">
-                                            <strong>enzo</strong>
-                                        </a>:
-                                        A tool that automates managing and deploying HackGT’s tech products on GCP. Implemented an execution engine to run configuration yaml files (similar to GitHub Actions). Written in Rust.
-                                    </li>
-                                    <li>
-                                        <a href="https://love-handle.hack.gt/">
-                                            <strong>HackGT 7 puzzle</strong>
-                                        </a>:
-                                        Designed an admissions puzzle. Implemented a web based clone of Windows 98 through 10, complete with a virtual file system and terminal using Web Components.
-                                    </li>
+                                  <li>
+                                    <a
+                                      href="https://2021.hack.gt/"
+                                      target="_blank"
+                                    >HackGT 8</a>: ~2000 attendees
+                                  </li>
+                                  <li>
+                                    <a
+                                      href="https://prototypical.hexlabs.org/"
+                                      target="_blank"
+                                    >Prototypical</a>: ~50 attendees
+                                  </li>
+                                  <li>
+                                    <a
+                                      href="https://catalyst.hack.gt/"
+                                      target="_blank"
+                                    >Catalyst</a>: ~80 attendees
+                                  </li>
+                                  <li>
+                                    <a
+                                      href="https://healthtech.hack.gt/"
+                                      target="_blank"
+                                    >HealthTech</a>: ~100 attendees
+                                  </li>
                                 </ul>
-                            </li>
+                              </li>
+                              <li>Completed the rebranding of HackGT to HexLabs</li>
+                              <li>
+                                Raised over $200k in funding to run these events
+                                and expand to other initiatives like a year-round
+                                high school outreach program
+                              </li>
+                            </ul>
+                          </li>
+                          <li>
+                            Horizons Event lead
+                            <span class="small muted">
+                              [December 2019 - March 2020]
+                            </span>
+                            <ul>
+                              <li>Lead a team of 20 people to host 
+                                <a 
+                                  href="https://horizons.hack.gt"
+                                  target="_blank">Horizons
+                                </a>, a arts + tech hackathon</li>
+                              <li>About 300 students attended the event and 81 submitted projects</li>
+                              <li>
+                                <a
+                                  href="https://horizons2020.devpost.com/project-gallery"
+                                  target="_blank"
+                                >Project showcase</a>
+                              </li>
+                            </ul>
+                          </li>
+                          <li>
+                            Technology team
+                            <span class="small muted">
+                              [January 2019 - November 2020]
+                            </span>
+                            <ul>
+                              <li>Mentored Atlanta high school students at Catalyst, a 200+ participant learnathon</li>
+                              <li>
+                                Selected projects
+                                <ul>
+                                  <li><a
+                                    href="https://github.com/HackGT/love-handle"
+                                    target="_blank"
+                                  >HackGT 7 admissions puzzle</a>
+                                  </li>
+                                  <li><a
+                                    href="https://github.com/HackGT/fluo"
+                                    target="_blank"
+                                  >Fluo Web Components Library</a>
+                                  </li>
+                                </ul>
+                            </ul>
+                          </li>
                         </ul>
                     </div>
                 </div>
