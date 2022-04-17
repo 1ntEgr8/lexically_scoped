@@ -137,6 +137,10 @@ blockquote {
     color: var(--primary-color);
 }
 
+li {
+  padding-bottom: 5px;
+}
+
 @media (prefers-color-scheme: dark) {
     :root {
         --bg-color: #1e1e1e;
