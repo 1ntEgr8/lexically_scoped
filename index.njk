@@ -18,20 +18,44 @@ description: My personal website and blog!
 <div class="content">
     <section>
         <p>
-            I'm an undergrad studying Computer Science at Georgia Tech. My interests include compilers, programming languages, quantum computing, and operating systems.
+            I'm a Masters student at Georgia Tech. My interests include compilers, programming languages, systems programming, and quantum computing.
         </p>
 
         <h3>Research</h3>
-        <p> I'm part of the <a href="http://prod.tinker.cc.gatech.edu/" target="_blank">TINKER lab</a> at Georgia Tech. My research revolves around Grover oracle implementation and synthesis. I'm advised by <a href="https://www.scs.gatech.edu/people/thomas-conte" target="_blank">Dr. Thomas Conte</a> and <a href="https://www.cc.gatech.edu/people/jeffrey-young" target="_blank">Dr. Jeff Young</a>.</p>
+        <p>I'm broadly interested in studying the intersection between systems and programming languages.</p>
+        <p>
+          I'm currently working with <a href="https://vsarkar.cc.gatech.edu/"
+          target="_blank">Dr. Vivek Sarkar</a> on extending <a
+          href="https://link.springer.com/chapter/10.1007/978-3-031-12597-3_22"
+          target="_blank">AutoMPHC</a> to support intra-node parallelism using
+          OpenMP.  I'm also working with <a
+          href="https://www.microsoft.com/en-us/research/people/daan/"
+          target="_blank">Daan Leijen</a> on implementing the <a
+          href="https://www.microsoft.com/en-us/research/publication/perceus-garbage-free-reference-counting-with-reuse/"
+          target="_blank">Perceus</a> reference counting system for OCaml.
+        </p>
+        <p>
+          During my undergrad I was part of the <a
+          href="http://prod.tinker.cc.gatech.edu/" target="_blank">TINKER
+          lab</a> where I was advised by <a
+          href="https://www.scs.gatech.edu/people/thomas-conte"
+          target="_blank">Dr. Thomas Conte</a> and <a
+          href="https://www.cc.gatech.edu/people/jeffrey-young"
+          target="_blank">Dr. Jeff Young</a>. I wrote a space-efficient
+          implementation of the quantum verification of matrix products (QVMP)
+          algorithm.
+        </p>
 
         <small><a href="#publications">View publications</a></small>
 
         <h3>Experience</h3>
         <p>
-        I've interned on the PyTorch Dev Infra team at Meta and the Innovation Lab at NCR.
+        I've interned on the Privacy Language Experience (PLex) team and the PyTorch Dev Infra team at Meta, and the Innovation Lab at NCR.
         </p>
 
-        <small><a href="/resume">View resume</a></small>
+        <small><a href="/assets/resume.pdf">View resume</a></small>
+        <br>
+        <small><a href="/assets/cv.pdf">View cv</a></small>
 
         <h3>Involvements</h3>
 
@@ -42,7 +66,7 @@ description: My personal website and blog!
                 <small class="muted">(August 2021 to present)</small>
             </li>
             <li>
-                <a href="{{ gatech.hackgt.main }}" target="_blank">HexLabs</a>(formerly HackGT):
+                <a href="{{ gatech.hackgt.main }}" target="_blank">HexLabs</a> (formerly HackGT):
                 <ul>
                     <li>Co-director
                         <small class="muted">(November 2020 to November 2021)</small>
@@ -62,9 +86,9 @@ description: My personal website and blog!
             </li>
             <li> Teaching assistantship:
                  <ul>
-                    <li>CS 3210: Design of Operating Systems <small class="muted">(January 2021 to present)</small></li>
-                    <li>CS 2110: Computer Organization and Programming <small class="muted">(January 2020 to December 2020)</small></li>
-                    <li>CS 1301: Intro to Computing <small class="muted">(August 2019 to December 2019)</small></li>
+                    <li>CS 3210: Design of Operating Systems <small class="muted">(Spring 2022 [Head TA], Fall 2021, Spring 2021)</small></li>
+                    <li>CS 2110: Computer Organization and Programming <small class="muted">(Fall 2020, Spring 2020)</small></li>
+                    <li>CS 1301: Intro to Computing <small class="muted">(Fall 2019)</small></li>
                  </ul>
             </li>
         </ul>
@@ -90,13 +114,27 @@ description: My personal website and blog!
         <h2> Publications </h2>
         <ul>
             <li>
-                <b><a href="https://github.com/1ntEgr8/qvmp/blob/main/paper/thesis.pdf">
+                <b><a href="https://arxiv.org/abs/2208.09914">
+                  An Implementation of the Quantum Verification of Matrix Products Algorithm
+                </a></b>
+                <br>
+	            Elton Pinto, Jeffrey Young, Thomas Conte, Austim Adams, Eugene Dumitrescu.
+                <br>
+                4th International Workshop on Quantum Resource Estimation, QRE
+                2022. Proceedings of the 49th Annual International Symposium on
+                Computer Architecture (ISCA'22) 
+                <br>
+            </li>
+            <li>
+                <b><a href="https://arxiv.org/abs/2208.09914">
                   An Implementation of the Quantum Verification of Matrix Products Algorithm
                 </a></b>
                 <br>
 	            Elton Pinto.
                 <br>
-	            Undergraduate Thesis. Georgia Institute of Technology, TINKER Lab, May 2022.
+	            B.S. Thesis. Georgia Institute of Technology, TINKER Lab, May 2022.
+                <br>
+                <em>Third place (Explore category), UROP Symposium 2022</em>
             </li>
             <li>
 	            <b><a href="https://doi.org/10.1109/ICRC53822.2021.00014">
@@ -105,9 +143,7 @@ description: My personal website and blog!
                 <br>
 	            Austin Adams, Elton Pinto, Jeffrey Young, Creston Herold, Eugene Dumitrescu, and Thomas Conte.
                 <br>
-	            <a href="https://ieeexplore.ieee.org/xpl/conhome/9743142/proceeding">
                 2021 International Conference on Rebooting Computing (ICRC 2021)
-                </a>
             </li>
         </ul>
     </section>
