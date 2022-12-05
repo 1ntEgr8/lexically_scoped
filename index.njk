@@ -22,28 +22,62 @@ description: My personal website and blog!
         </p>
 
         <h3>Research</h3>
-        <p>I'm broadly interested in studying the intersection between systems and programming languages.</p>
+        <p>I'm interested in tackling problems at the intersection between programming languages and systems.</p>
         <p>
-          I'm currently working with <a href="https://vsarkar.cc.gatech.edu/"
-          target="_blank">Dr. Vivek Sarkar</a> on extending <a
-          href="https://link.springer.com/chapter/10.1007/978-3-031-12597-3_22"
-          target="_blank">AutoMPHC</a> to support intra-node parallelism using
-          OpenMP.  I'm also working with <a
-          href="https://www.microsoft.com/en-us/research/people/daan/"
-          target="_blank">Daan Leijen</a> on implementing the <a
-          href="https://www.microsoft.com/en-us/research/publication/perceus-garbage-free-reference-counting-with-reuse/"
-          target="_blank">Perceus</a> reference counting system for OCaml.
+          I'm currently working on the following projects:
+          <ul>
+            <li>
+              Replacing OCaml's GC with <a
+              href="https://www.microsoft.com/en-us/research/publication/perceus-garbage-free-reference-counting-with-reuse/">Perceus</a>
+              <br>
+              <small>
+              Advised by <a
+              href="https://www.microsoft.com/en-us/research/people/daan/">Daan
+              Leijen</a>
+              </small>
+            </li>
+
+            <li>
+              Mudos, a novel device-driver model that gives
+              the kernel more control over the virtualization and
+              scheduling of compute devices like GPUs, TPUs, and custom
+              accelerators
+              <br>
+              <small>
+              Advised by <a href="https://faculty.cc.gatech.edu/~atumanov/">Prof. Alexey Tumanov</a>
+              </small>
+            </li>
+
+            <li>
+              <a href="{{ projects.neko.url }}" target="_blank">Neko</a>, a quantum map-filter-reduce
+              programming language
+              <br>
+              <small>
+              Independent study
+              </small>
+            </li>
+
+            <li>
+              Extending the <a href="{{ projects.automphc.url }}">AutoMPHC</a>
+              project to handle intra-node automatic parallelization of Python
+              programs using OpenMP/CUDA
+              <small>
+              <br>
+              Advised by <a href="https://vsarkar.cc.gatech.edu/">Prof. Vivek Sarkar</a>
+              </small>
+            </li>
+          </ul>
         </p>
         <p>
           During my undergrad I was part of the <a
           href="http://prod.tinker.cc.gatech.edu/" target="_blank">TINKER
           lab</a> where I was advised by <a
           href="https://www.scs.gatech.edu/people/thomas-conte"
-          target="_blank">Dr. Thomas Conte</a> and <a
+          target="_blank">Prof. Thomas Conte</a> and <a
           href="https://www.cc.gatech.edu/people/jeffrey-young"
-          target="_blank">Dr. Jeff Young</a>. I wrote a space-efficient
-          implementation of the quantum verification of matrix products (QVMP)
-          algorithm.
+          target="_blank">Dr. Jeff Young</a>. While there, I wrote a
+          space-efficient implementation of the quantum verification of matrix
+          products (QVMP) algorithm.
         </p>
 
         <small><a href="#publications">View publications</a></small>
@@ -55,7 +89,7 @@ description: My personal website and blog!
 
         <small><a href="/assets/resume.pdf">View resume</a></small>
         <br>
-        <small><a href="/assets/cv.pdf">View cv</a></small>
+        <small><a href="/assets/cv.pdf">View CV</a></small>
 
         <h3>Involvements</h3>
 
@@ -114,15 +148,15 @@ description: My personal website and blog!
         <h2> Publications </h2>
         <ul>
             <li>
-                <b><a href="https://arxiv.org/abs/2208.09914">
-                  An Implementation of the Quantum Verification of Matrix Products Algorithm
+                <b><a href="{{ projects.neko.url }}">
+                  Neko: A quantum map-filter-reduce programming language
                 </a></b>
                 <br>
-	            Elton Pinto, Jeffrey Young, Thomas Conte, Austim Adams, Eugene Dumitrescu.
+                Elton Pinto
                 <br>
-                4th International Workshop on Quantum Resource Estimation, QRE
-                2022. Proceedings of the 49th Annual International Symposium on
-                Computer Architecture (ISCA'22) 
+                Student Research Competition (SRC). Proceedings of the 50th ACM
+                SIGPLAN-SIGACT Symposium on Principles of Programming Languages
+                (POPL'23)
                 <br>
             </li>
             <li>
@@ -130,7 +164,18 @@ description: My personal website and blog!
                   An Implementation of the Quantum Verification of Matrix Products Algorithm
                 </a></b>
                 <br>
-	            Elton Pinto.
+	            Elton Pinto, Jeffrey Young, Thomas Conte, Austim Adams, Eugene Dumitrescu
+                <br>
+                4th International Workshop on Quantum Resource Estimation, QRE
+                2022. Proceedings of the 49th Annual International Symposium on
+                Computer Architecture (ISCA'22) 
+            </li>
+            <li>
+                <b><a href="https://arxiv.org/abs/2208.09914">
+                  An Implementation of the Quantum Verification of Matrix Products Algorithm
+                </a></b>
+                <br>
+	            Elton Pinto
                 <br>
 	            B.S. Thesis. Georgia Institute of Technology, TINKER Lab, May 2022.
                 <br>
@@ -141,7 +186,7 @@ description: My personal website and blog!
                   Enabling a Programming Environment for an Experimental Ion Trap Quantum Testbed
                 </a></b>
                 <br>
-	            Austin Adams, Elton Pinto, Jeffrey Young, Creston Herold, Eugene Dumitrescu, and Thomas Conte.
+	            Austin Adams, Elton Pinto, Jeffrey Young, Creston Herold, Eugene Dumitrescu, Thomas Conte
                 <br>
                 2021 International Conference on Rebooting Computing (ICRC 2021)
             </li>
