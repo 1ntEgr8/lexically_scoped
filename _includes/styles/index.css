@@ -137,6 +137,11 @@ blockquote {
     color: var(--primary-color);
 }
 
+.footnotes p {
+  padding: 0;
+  margin: 0;
+}
+
 li {
   padding-bottom: 5px;
 }

@@ -3,6 +3,7 @@ const Terser = require("terser");
 const { DateTime } = require("luxon");
 const syntaxHighlightPlugin = require("@11ty/eleventy-plugin-syntaxhighlight");
 const markdownIt = require("markdown-it");
+const markdownItFootnote = require("markdown-it-footnote");
 
 module.exports = eleventyConfig => {
     eleventyConfig.addPlugin(syntaxHighlightPlugin);
@@ -13,7 +14,10 @@ module.exports = eleventyConfig => {
         linkify: true
     };
     // markdown
-    eleventyConfig.setLibrary("md", markdownIt(markdownItOptions));
+    eleventyConfig.setLibrary("md",
+      markdownIt(markdownItOptions)
+      .use(markdownItFootnote)
+    );
 
     // filters
     eleventyConfig.addFilter("cssmin", code => {
