@@ -146,6 +146,15 @@ li {
   padding-bottom: 5px;
 }
 
+.no-indent {
+  padding: 15px;
+}
+
+.framed {
+  border: 2px solid black;
+  padding: 0px 60px;
+}
+
 @media (prefers-color-scheme: dark) {
     :root {
         --bg-color: #1e1e1e;
@@ -172,6 +181,10 @@ li {
 
     .post__title {
         font-size: 1.5rem;
+    }
+
+    .framed {
+      padding: 20px;
     }
 }
 
